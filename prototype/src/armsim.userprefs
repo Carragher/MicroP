@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MicroProcessor/Program.cs">
+    <Files>
+      <File FileName="MicroProcessor/Program.cs" Line="313" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/carragher/Documents/MicroProcessor/MicroProcessor/Program.cs" line="311" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="Carragher" Email="daniel.carragher@me.com" Copyright="Carragher inc" Company="" Trademark="" />
+</Properties>

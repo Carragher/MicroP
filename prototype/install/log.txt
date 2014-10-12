@@ -1,0 +1,89 @@
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+
+2014-10-01 12:22:21
+
+Loader: initializing per command
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+
+2014-10-01 20:11:05
+
+Loader: initializing per command
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running in a loop
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Running a cycle
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: error reading from the selcted file
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: Reseting the Memory
+Loader: reading elf file test2.exe
+Loader: Entry point: 1038
+Loader: Number of program header entries: 2
+Loader: HASH IS: 0A81D8B63D44A192E5F9F52980F2792E
+
+2014-10-01 20:13:38
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: Reseting the Memory
+Loader: HASH IS: BB7DF04E1B0A2570657527A7E108AE23
+Prototype: error reading from the selcted file
