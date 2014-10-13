@@ -40,3 +40,10 @@ C:\Users\Daniel\Documents\Code\prototype\src\MicroProcessor\bin\Debug\MicroProce
 C:\Users\Daniel\Documents\Code\prototype\src\MicroProcessor\obj\x86\Debug\armsim.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\Code\prototype\src\MicroProcessor\obj\x86\Debug\armsim.SimGui.resources
 C:\Users\Daniel\Documents\Code\prototype\src\MicroProcessor\obj\x86\Debug\armsim.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\obj\x86\Debug\MicroProcessor.exe
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\obj\x86\Debug\MicroProcessor.pdb
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\bin\Debug\MicroProcessor.exe
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\bin\Debug\MicroProcessor.pdb
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\obj\x86\Debug\armsim.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\obj\x86\Debug\armsim.SimGui.resources
+C:\Users\Daniel\Documents\GitHub\Code\ArmSim\prototype\src\MicroProcessor\obj\x86\Debug\armsim.csproj.GenerateResource.Cache

@@ -57,6 +57,66 @@ namespace armsim
             }
         }
 
+        public static void regSet(uint regnum, uint val)
+        {
+            switch (regnum)
+            {
+                case 0:
+                    r0.writeWord(0, val);
+                     break;
+                case 1:
+                     r1.writeWord(0, val);
+                     break;
+                case 2:
+                     r2.writeWord(0, val);
+                     break;
+                case 3:
+                     r3.writeWord(0, val);
+                     break;
+                case 4:
+                     r4.writeWord(0, val);
+                     break;
+                case 5:
+                     r5.writeWord(0, val);
+                     break;
+                case 6:
+                     r6.writeWord(0, val);
+                     break;
+                case 7:
+                     r7.writeWord(0, val);
+                     break;
+                case 8:
+                     r8.writeWord(0, val);
+                     break;
+                case 9:
+                     r9.writeWord(0, val);
+                     break;
+                case 10:
+                     r10.writeWord(0, val);
+                     break;
+                case 11:
+                     r11.writeWord(0, val);
+                     break;
+                case 12:
+                     r12.writeWord(0, val);
+                     break;
+                case 13:
+                     r13.writeWord(0, val);
+                     break;
+                case 14:
+                     r14.writeWord(0, val);
+                     break;
+                case 15:
+                     r15.writeWord(0, val);
+                     break;
+            }
+
+        }
+
+
+
+
+
         //this method returns the register data to be used b
         public static byte[] regRead(uint regnum)
         {
@@ -222,7 +282,7 @@ namespace armsim
                 {
                     break;
                 }
-                uint dcded = processor.decode(fetched);
+                Instruction dcded = processor.decode(fetched);
                 processor.exectute(dcded);
                 if (traceTest)
             {
@@ -260,7 +320,7 @@ r10 r11 r12 r13 r14
             r15.writeWord(0, Convert.ToUInt32(addr));
             if (fetched != 0)
             { 
-                uint dcded = processor.decode(fetched);
+                Instruction dcded = processor.decode(fetched);
                 processor.exectute(dcded);
                 
             }
@@ -295,20 +355,166 @@ r10 r11 r12 r13 r14
             return 0;
         }
         //decodes an instruction
-        public uint decode(uint dcd)
+        public Instruction decode(uint dcd)
         {
-            return 0;
+            Instruction ist = new Instruction();
+            //test bits 27 and 26;
+            byte[] midStep = new byte[4];
+            midStep = BitConverter.GetBytes(dcd);
+            BitArray bity = new BitArray(midStep);
+            bool t1 = bity[27];
+            bool t2 = bity[26];
+            if (t1 == false && t2 == false)
+            {
+                BitArray opcode = new BitArray(4);
+                bool sflag = bity[11];
+                bool iflag = bity[6];
+                BitArray rd = new BitArray(4);
+                BitArray shifter = new BitArray(12);
+                BitArray sbz = new BitArray(4);
+
+                sbz[0] = bity[19];
+                sbz[1] = bity[18];
+                sbz[2] = bity[17];
+                sbz[3] = bity[16];
+
+                opcode[0] = bity[24];
+                opcode[1] = bity[23];
+                opcode[2] = bity[22];
+                opcode[3] = bity[21];
+
+                rd[0] = bity[15];
+                rd[1] = bity[14];
+                rd[2] = bity[13];
+                rd[3] = bity[12];
+
+                for (int i = 0, p = 11; p > -1; i++, p--)
+                {
+                    shifter[i] = bity[p];
+                }
+
+                iflag = bity[25];
+                sflag = bity[20];
+
+
+                dataManip dp = new dataManip(dcd, opcode, sflag, iflag, rd, sbz, shifter);
+                return dp;
+            }
+
+            return ist;
         }
-        
+
         //executes the instructions
-        public bool exectute(uint inst)
+        public bool exectute(Instruction inst)
         {
+            inst.run();
             Thread.Sleep(250);
             return true;
+
+        }
+    }
+
+
+    class Instruction
+    {
+       public Memory instruct = new Memory(4);
+
+        public Instruction() { ;}
+
+        public virtual void run() { }
+
+        public uint barrelShift(BitArray shift, BitArray preIm)
+        {
+            BitArray fullVal = new BitArray(32);
+
+            
+            
+
+            return 0;
+        }
+
+
+
+    }
+
+    class dataManip : Instruction
+    {
+        public uint rd;
+        public uint rn;
+        public uint shifts;
+        public uint immediate;
+        public bool isIm;
+
+        public dataManip(uint dcd, BitArray op, bool sflag, bool iflag, BitArray rdm, BitArray sbz, BitArray shifter)
+        {
+            instruct.writeWord(0, dcd);
+
+
+
+            if (iflag)
+            {
+                isIm = true;
+                BitArray shift = new BitArray(4);
+                
+                BitArray preIm = new BitArray(8);
+                for (int x = 4, y =0; x < 12; x++, y++)
+                {
+                    preIm[y] = shifter[x];
+                }
+                //reversed of what you normally would think.
+                byte b = instruct.readByte(0);
+                immediate = b;
+                //barrelShift(shift,preIm);
+                
+                BitArray convert = new BitArray(8);
+                convert[0] = rdm[3];
+                convert[1] = rdm[2];
+                convert[2] = rdm[1];
+                convert[3] = rdm[0];
+                byte[] bite = new byte[1];
+                convert.CopyTo(bite, 0);
+                byte[] conAttempt2 = new byte[4];
+                conAttempt2[0] = bite[0];
+                rd = BitConverter.ToUInt32(conAttempt2, 0);
+
+
+
+
+
+                
+
+
+            }
+            else
+            {
+
+            }
+        }
+
+        public override void run()
+        {
+            base.run();
+            if (this.isIm)
+            {
+                uint regnum = this.rd;
+                uint val = this.immediate;
+                Computer.regSet(regnum, val);
+            }
+
         }
 
     }
 
+    class dataMove : Instruction
+    {
+
+    }
+
+    class branching : Instruction
+    {
+
+    }
+    
 
 	//A struct of elf Storage varibles. This struct is used to parse the header portion of an ELF  file.
 	[StructLayout(LayoutKind.Sequential, Pack = 1)] //For Parsing Header Portion
@@ -668,6 +874,14 @@ r10 r11 r12 r13 r14
                 Debug.Assert(0x00000000 == reg.readWord(0));
                 CPU c = new CPU();
                 Debug.Assert(0x00000000 == c.fetch(0));
+                Instruction decoded = c.decode(0xe3a02030);
+                bool eb = c.exectute(decoded);
+                byte[] testBites = new byte[4];
+                testBites = Computer.regRead(2);
+                uint val = BitConverter.ToUInt32(testBites,0);
+                Debug.Assert(48== val);
+
+                
                 
 			}
 			
@@ -695,15 +909,15 @@ r10 r11 r12 r13 r14
             Computer.initReg();
             
             bool doIRun = true;
-            try
-            {
+           // try
+           // {
                 options.parse(args);
-            }
-            catch
-            {
-                Computer.log.Write("Prototype: Invalid input detected");
-                doIRun = false;
-            }
+           // }
+           // catch
+           // {
+              //  Computer.log.Write("Prototype: Invalid input detected");
+               // doIRun = false;
+           // }
             if (doIRun)
             {
                 Application.EnableVisualStyles();
