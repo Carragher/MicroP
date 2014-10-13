@@ -1,0 +1,1390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="66b3ea2e-f4b5-479f-be9b-28118ded3da8"
+  name="armsim"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4562c3f4-4131-473e-969b-f44a10306832"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Darmsim"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="79e9b41f-aedd-4c7e-8378-ee6e9020f03a"
+        name="Instruction"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3519e250-6987-4ed0-93bb-47381dc60cf0"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="501a89a6-c7eb-44df-9108-efd0ecfc767d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b28eb26c-6a36-4522-bfda-a4b9c1e149cc">
+                <propertyInstance
+                  Id="2dcbc9d8-a445-45ed-a3c3-73ca96ba836d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="935c0ee9-72ea-44ac-83e5-9d7b2bbe5250">
+                <propertyInstance
+                  Id="6306197f-a429-408c-b8b3-d35ad48b6969"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8a6c775b-e94e-4fda-91fc-260dd62d8d93">
+                <propertyInstance
+                  Id="8e6c0db2-0571-4f8f-b264-58a0d335a5db"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="04cc15bc-d6a9-4599-9ca7-72eb85cffc72">
+                <propertyInstance
+                  Id="ff00555c-09b6-499d-bed0-0f52dd001e30"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3f0a4b14-3d65-44bf-b56c-d2597dcd0f5a">
+                <propertyInstance
+                  Id="41fdcf77-2aa8-4678-89c7-7f95dde0aac8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="2f7be250-34cd-4251-bd62-7775c299b0ae"
+            name="instruct"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="36b025f3-cc15-430a-b4af-8397110791fc"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3Dinstruct"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="429b8ea7-f422-498e-87a7-96d1f2bee9dd"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce1619c4-dc57-466b-89ee-99fac1afd271">
+                    <propertyInstance
+                      Id="9c2bd752-e8e5-4771-85cc-ad8982e7e7cb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a5a5302-ca28-4d92-9d21-a7c6170d58d6">
+                    <propertyInstance
+                      Id="188a9359-9392-440b-b12c-bd8ec6c29d44"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ec32091-0dbf-4d13-b56a-27529b6c8785">
+                    <propertyInstance
+                      Id="446c1a4f-a23a-4ff8-b1cc-d5dff8ecb543"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="361d21fa-74a3-42cc-931c-9d5885164934">
+                    <propertyInstance
+                      Id="a920bedf-75be-4e0d-8432-b69c4cec7da2"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8befe61c-713c-464c-b02a-42e2e65448c3">
+                    <propertyInstance
+                      Id="7cb489e9-e4c6-436f-81e3-8c5e13363853"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="541fa050-ab45-4e2f-b624-858f2b2c99d1"
+                LastKnownName="Memory"
+                LastKnownLocation="Package_1037.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="eab7292c-15b2-4655-afcb-150538fc1fc4"
+            name="barrelShift"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="64288428-6bc2-41a2-b947-b55f3c90fc59"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3D(Name%3DbarrelShift OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="89765a00-7928-4e11-a6af-9e046115f45b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7624ccc0-82ec-47ee-93aa-ab0ce510ae23">
+                    <propertyInstance
+                      Id="5ced94b6-98a2-447b-a472-e7fd336a32c5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92989026-12a7-491b-ab2a-0f5c1ec33e6e">
+                    <propertyInstance
+                      Id="29d651cf-f20a-4d84-9fe1-c4ce8eea07fe"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb68adea-3486-42ee-a811-30429cf3c549">
+                    <propertyInstance
+                      Id="2b5d552e-ca00-4644-a7d1-ed770697b930"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90fd19d0-b0e2-4836-b1af-f01827801051">
+                    <propertyInstance
+                      Id="05741e5d-7cf0-48f5-86f5-a88a7f228254"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f5612c3-040d-4a41-b57f-02657b99137c">
+                    <propertyInstance
+                      Id="a9bb0571-4f96-442e-9666-bf0decf65492"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93712b6f-bc63-475c-96a2-043c80aa4276">
+                    <propertyInstance
+                      Id="5a784324-cdd5-4642-b361-e7dd177a31b5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="24a17f17-52b5-425c-ad1e-0f528db76fa0"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                      LastKnownName="UInt32"
+                      LastKnownLocation="Package1_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1b64bd96-8b98-4f3e-9fab-5cb67f7b2957"
+                  name="shift"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="60c8a8af-43e7-4bb9-bbc8-5a1694b54473"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3D(Name%3DbarrelShift OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Dshift"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8209f147-efee-4a98-b24d-6e8a32fff72f"
+                  name="preIm"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b2fa057a-14a9-4e2e-a0f8-237f6170dee3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3D(Name%3DbarrelShift OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3DpreIm"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="005da249-9dfa-4797-b16f-9190266b6de1"
+            name="Instruction"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b8d2534a-fb53-4c82-a932-14393b50dbf6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="229076f4-556f-48e9-a860-1e342dcdf0f5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="702a9235-0458-45da-a3e4-fc2aecdb63ec">
+                    <propertyInstance
+                      Id="26d37eba-8762-4d7f-9e26-56e7f11a716a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73f3bec8-67a4-4677-b0a4-f90d460a735d">
+                    <propertyInstance
+                      Id="faf184cc-8b06-4830-8296-8f4f372356e6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee7ccbfa-799a-4136-9f24-8742071c79e2">
+                    <propertyInstance
+                      Id="d26c2602-87c5-433d-8b56-f8c399a15a2d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f5a9580-1e52-4f97-a077-184d57ce0632">
+                    <propertyInstance
+                      Id="820fe081-8029-4693-8563-717b452dc416"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42fb0339-85a8-421e-890a-48e57e5155d9">
+                    <propertyInstance
+                      Id="c7e6f636-524a-425e-a865-9ecdfa6735a8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2da5173d-46af-4171-88db-e8d315247d49">
+                    <propertyInstance
+                      Id="b449a4be-c8e5-47e2-bf6f-be78e06843f1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="c824d555-1d67-4776-a22c-5cad1669211d"
+            name="run"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="871e8370-3d20-4910-88ec-a2530f39e05a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DInstruction Member%3Drun"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8fd705fa-9a87-4d07-887c-9649f6d56f67"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81a96f63-e05d-45e1-960d-ba75527884ba">
+                    <propertyInstance
+                      Id="5c17a907-49b8-4c80-adda-4d41c84788cc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19965f2a-7771-43d4-8d63-2597fb49ab9b">
+                    <propertyInstance
+                      Id="d0d16884-827f-4982-951a-e0e6f87653a2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc37d252-9e89-45c4-8fb5-4510e4f7fbbe">
+                    <propertyInstance
+                      Id="ba18ae56-9086-4ea2-a8d5-818bf085687d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bab3cd91-d5da-48ad-80a2-4c7bcce5feb9">
+                    <propertyInstance
+                      Id="350e46c6-1fe5-48db-ba2c-07052ccb076b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be1d9c18-e92c-4f2a-adb5-1c3b5284297d">
+                    <propertyInstance
+                      Id="ab78cf0e-e9ae-410d-bb03-fb76c2cf46ef"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb1398b8-54d2-42b9-9baf-e7c0dfbc96d5">
+                    <propertyInstance
+                      Id="16d425df-f04d-4a2b-8cb9-c840599b6fa4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="541fa050-ab45-4e2f-b624-858f2b2c99d1"
+        name="Memory"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="caad5b1f-49ef-4e20-91fc-90b7c1598e93"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DMemory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c01e9077-1c35-4e3f-9612-ce3e1720745a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cfdf7e89-738b-4c95-a677-1f4ce338068c">
+                <propertyInstance
+                  Id="968ee457-6128-4d7d-b308-61b3834c1f8b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a880757f-3420-4232-a8b4-a6fe17ba5f48">
+                <propertyInstance
+                  Id="3f426d3b-c37b-4ee0-964e-56cbad71ce95"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="83d1ad35-442a-4948-9c83-874d9386d330">
+                <propertyInstance
+                  Id="7741d011-87b4-492b-975a-1c2affe5242b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a09eece6-1c5f-4e3e-8a4a-b04f1fe0ec63">
+                <propertyInstance
+                  Id="21cdecb1-7431-4b4b-80d5-a1db61726fb3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ffbaa632-453f-4e93-bb33-a71b128910a6">
+                <propertyInstance
+                  Id="90378288-219f-45bd-a036-0630f88b1178"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4ed12430-e836-4c48-8451-edb7f432e17c"
+        name="branching"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="684dc670-891d-475e-aa25-ef9d8c9423a2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3Dbranching"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0e59a5c8-fd15-479e-a0dc-c51398e3b422"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b0f4796f-09ae-4574-84a3-9b8989456ad9">
+                <propertyInstance
+                  Id="c859369c-5dde-4038-a2bd-dc9bd1863583"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8976d98c-bd09-443c-b93a-def31e220b4a">
+                <propertyInstance
+                  Id="055312e4-1b92-4a27-94f2-bfc639fb021e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="775e9b6f-9449-47bd-b723-be28632f0659">
+                <propertyInstance
+                  Id="5b68bc44-9c5f-4612-9c22-f33b3bc2ec0e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24a352df-8431-45c9-a381-69c12ecaa183">
+                <propertyInstance
+                  Id="94acd3a8-f7a3-47ac-bb0b-83f8da8a90cf"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8623e11e-7029-4e10-b279-e7a61c045023">
+                <propertyInstance
+                  Id="9386fea9-7731-492f-99f5-5a19f5eaf7c4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="4628c947-a392-47d3-af1e-593419d007aa"
+            isSubstitutable="false">
+            <classMoniker
+              Id="79e9b41f-aedd-4c7e-8378-ee6e9020f03a"
+              LastKnownName="Instruction"
+              LastKnownLocation="Package_1037.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="323843af-f0f4-44f4-8c31-7de2611decdd"
+            name="branching"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7c3cc858-89e5-4ce4-820d-327f8665aa4c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3Dbranching Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="111a8075-984b-4282-8343-9da719681699"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9aa1455-1aeb-4a3e-826c-f3af2c02ba95">
+                    <propertyInstance
+                      Id="2586aa41-432b-44a0-a5cc-83c293fb32bf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd324585-1cbc-47fa-b0c8-9110eeba203b">
+                    <propertyInstance
+                      Id="dee47906-e4a5-411e-80ec-d3da7f351525"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3bd613c5-3612-4f4f-9682-fbd61b3c027d">
+                    <propertyInstance
+                      Id="f30745cd-ee6e-420d-9716-a0bde490f12e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="630d8d45-d710-46ef-9012-50b484a3c0fd">
+                    <propertyInstance
+                      Id="1a4fbf10-47cc-4cf7-9472-c4c0fa63f00f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef2712a9-2ec6-4e52-8e7d-3841a242a34b">
+                    <propertyInstance
+                      Id="3592e8b7-c5e3-442a-8dc7-ef0b5a47b1f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26dddb5f-612e-4310-9089-8ba468cc276d">
+                    <propertyInstance
+                      Id="1c38c98d-01d1-4300-9eb3-4d2ec53c9857"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="503ab279-7db4-4d09-9ca4-3e571b73cfed"
+        name="dataManip"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d58f3d68-6685-4349-978b-cd502887207b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="92578ed0-5d6a-4173-a902-7d426d2a24d5"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a9a7224-2950-4961-918a-e9e9488497ec">
+                <propertyInstance
+                  Id="53418c04-ab84-4f7c-92a8-f2d7de5c6c56"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d6909739-6110-46e2-93d3-124280a1d363">
+                <propertyInstance
+                  Id="204431e6-755d-4970-8aaa-23c105493950"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cc211a8e-c520-4124-86d9-f03e0fbfe343">
+                <propertyInstance
+                  Id="9ce52678-3171-4034-b7d0-cdb2c7c3a601"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0aba7086-c899-46ee-b069-c9d2a64dc3d5">
+                <propertyInstance
+                  Id="276ec6de-2146-4b04-843d-8c8b85cb15aa"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5fb65b31-217f-482d-86a6-161fe6cbd08c">
+                <propertyInstance
+                  Id="8d746ac1-4fd8-4b15-a34b-2bed2a86792f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="419fb268-2ee7-412a-aeeb-46fe58ff7df2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="79e9b41f-aedd-4c7e-8378-ee6e9020f03a"
+              LastKnownName="Instruction"
+              LastKnownLocation="Package_1037.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="34c8ef7a-ed82-4ee6-8eb6-8be5125ae262"
+            name="immediate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6da1a1f5-7ae3-4bff-a306-180d4a7b9fcb"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3Dimmediate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a91af8b0-268c-4a43-a11d-3fe0ebb2579e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d021da8-a74a-4ad1-b2ee-f1f117072629">
+                    <propertyInstance
+                      Id="eabf69fd-d2a3-42fd-8b5a-6494dbb318dc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61174545-761d-4d8c-b9e1-65ad86f8a906">
+                    <propertyInstance
+                      Id="ffc835a1-cb53-4462-8ff9-f8bd66533a5a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47c20738-19c1-4d14-96af-8db9cbac6361">
+                    <propertyInstance
+                      Id="4fbb4e00-d01b-401b-a324-33610ecf8464"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63eaeede-cd09-488d-9da6-faef58af5729">
+                    <propertyInstance
+                      Id="018cfb9b-3d8b-4325-a09a-2e23098836f8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="600f76f9-adcd-4c1e-99b9-265022dc3b70">
+                    <propertyInstance
+                      Id="afd7896a-b727-43a6-9905-d5f9f46f39dd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                LastKnownName="UInt32"
+                LastKnownLocation="Package1_1037.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c4741f60-a358-4fce-9cc5-d45a15071525"
+            name="isIm"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="555020c9-c9cf-43eb-b427-6c1c57925774"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3DisIm"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c87734ba-7525-41aa-8a33-560240223e17"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61887628-8e35-4761-97c6-efc0b96dfd44">
+                    <propertyInstance
+                      Id="41296ea3-81f6-4d6b-a2b4-fc8c82b65a1d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb975182-93a6-488d-a003-66d3325bc66c">
+                    <propertyInstance
+                      Id="40766054-d033-4875-94c4-317cc669604d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46275459-b824-44fc-be25-e7f14138a725">
+                    <propertyInstance
+                      Id="9ce3f37a-ce64-4580-9f44-bbf554260db9"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55fee2c6-4aa2-4355-b534-ff3b4dd56da8">
+                    <propertyInstance
+                      Id="30945ebd-9ec2-45fe-bbd5-c0d529ae9f9f"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f17f0679-f012-4fec-9d38-76ca074d5875">
+                    <propertyInstance
+                      Id="2c5078b4-c6a4-4477-a7ea-8f119ed2a722"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="95780ed4-c1b4-4c60-8aa4-3802abc1ee02"
+            name="rd"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="db7f45a1-275e-4a9e-b381-e593aa40bd2c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3Drd"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d4fdb3f8-65fe-4ec8-bc8b-b371b46a15a2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a509f41d-aeb2-471f-aab0-9bc77f586ab8">
+                    <propertyInstance
+                      Id="1fa21ba2-2356-434d-97d6-0abd6463785f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a11abe86-dadc-4b3d-8560-d37dfcae0d9a">
+                    <propertyInstance
+                      Id="0544e627-eab1-42bd-b327-534ce57dcf87"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c088265f-c913-47bc-b644-8542844fa580">
+                    <propertyInstance
+                      Id="f96a3e20-7e7f-43bf-83ac-cd9f1a87ac59"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b42ae819-f7ff-4aa1-b53e-0bcd52ab9089">
+                    <propertyInstance
+                      Id="9fef097c-df72-49a9-8d91-29663960f147"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72eb24c5-7857-42e4-a9a0-a75acb77ae5d">
+                    <propertyInstance
+                      Id="e6da4e17-5579-43ef-bb10-4ea4ab4eee9c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                LastKnownName="UInt32"
+                LastKnownLocation="Package1_1037.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ee5b0f94-cb8e-4c8e-bae9-0b7e8addb1d7"
+            name="rn"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9c1eea41-f186-472c-bb94-aee4a1652567"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3Drn"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bf3afe0b-c6b8-417e-8c21-5e9a43365381"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e978dd6-05a9-4e42-967e-95c871597308">
+                    <propertyInstance
+                      Id="78c0e213-887b-4fb7-b0a2-42ccfde502a0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a59225d-3c3e-41cf-812f-8116d3f14e5e">
+                    <propertyInstance
+                      Id="0f1dc4c4-4a4b-44ed-8c0c-f6c58f0f3826"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2072ff6d-40c3-405d-b52e-24ec34085601">
+                    <propertyInstance
+                      Id="5ecbf81b-225a-4e8d-9bf5-3ae1c5b07da7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9c43564-0cc4-4b53-9d2d-6d71ac4947b0">
+                    <propertyInstance
+                      Id="3a3ff7a0-5927-4136-8892-68f920b7c1d7"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5c15e9a-7dd9-44a8-bd95-f19d189ee120">
+                    <propertyInstance
+                      Id="2ecb7170-c551-4071-a8c3-88f4a6f50058"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                LastKnownName="UInt32"
+                LastKnownLocation="Package1_1037.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="de03924a-3e63-44e7-b64f-13ce91eea7dd"
+            name="shifts"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="96548f88-ab28-4ebb-abc1-780a744d5a48"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3Dshifts"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="58eda9b9-1a1a-421f-b697-ac6f2827174e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b240207-a934-4b33-80ef-4bcf54fac2d7">
+                    <propertyInstance
+                      Id="afd78d62-deb2-4e4a-b939-4111bac5e438"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="954f51ca-c769-45cd-b4f7-413a2b0229ab">
+                    <propertyInstance
+                      Id="ff42e592-d2b0-4a40-b4b3-8a717010dd19"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7daabba3-b088-4afd-a804-404410f78331">
+                    <propertyInstance
+                      Id="a5960d8d-5b17-4f26-ad20-9ee424ed7474"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64574bbd-17c8-4b19-8700-c6e537b42965">
+                    <propertyInstance
+                      Id="d2d80bf6-6b9a-472a-a430-7cf965768c5a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6032492e-a05e-4166-af20-8be462491292">
+                    <propertyInstance
+                      Id="1be09963-f8ea-47ac-bec8-4eda89f6f630"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                LastKnownName="UInt32"
+                LastKnownLocation="Package1_1037.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bbbb5858-5405-4f70-acb2-af01ce7b50b3"
+            name="dataManip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5f594951-f814-4993-97a7-3cc2cdeb20f8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dcc959f6-d0da-4427-b9f7-b6e155483c9e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="575514c0-78ce-4561-8c2e-1c5167c9c9a0">
+                    <propertyInstance
+                      Id="1b451ab0-8c11-466e-9a71-94e0714f5e16"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0dc233c4-5dc0-4705-97fd-31df98ef168d">
+                    <propertyInstance
+                      Id="a13761bd-69ed-44b1-895d-425ee760e4c0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="863ddc20-0537-4809-ab35-c9ac346503c8">
+                    <propertyInstance
+                      Id="b0e69ad6-75da-4070-bafa-12bf26cd2dc5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1da9486e-5814-4de3-9fad-f6ef30dfc0bf">
+                    <propertyInstance
+                      Id="0b7d37f1-e1eb-4605-8ca5-38f2cc9199d0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16fa15db-460c-4f87-9f6e-93c9ae049854">
+                    <propertyInstance
+                      Id="bc6ffce4-ed62-464a-b03d-545e1fbbd511"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e60e1f68-35cb-4565-a949-762dd397d12e">
+                    <propertyInstance
+                      Id="05b95495-54cf-4ed0-8a01-acf59d59c11d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98c4eb22-4dca-4f96-bc57-f837dffc7cb0"
+                  name="dcd"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e6c0f9ae-ade3-4533-8c86-4bcca4c586ea"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Ddcd"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="65280d9e-f503-4748-85c9-9fea406eba93"
+                      LastKnownName="UInt32"
+                      LastKnownLocation="Package1_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c0b541a3-f53c-417e-8694-1a8b0ac28fe4"
+                  name="op"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d56c8205-37e6-43ca-ab93-fc315e454774"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Dop"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e07b0dd-4064-4471-a8c4-4e5ff5684146"
+                  name="sflag"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2827a78b-d6d3-448c-9694-ab17675e395d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Dsflag"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="185c2bb9-a6c4-45ff-8dce-3c40e59311e7"
+                  name="iflag"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="367cbb57-70de-42a9-a6aa-034b353ead57"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Diflag"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8e4705c7-3694-4f76-a5c3-0a2e9f5c7320"
+                  name="rdm"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="496eebc7-89a4-40d1-92f9-faf8bdaa27bf"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Drdm"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c63e9dd9-9641-47d0-b890-8838aa517c55"
+                  name="sbz"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4ca8670d-a15d-41e2-aa4e-4aee71a5ee0a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Dsbz"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f3e285c7-b072-4e57-9ff6-2a93d284fc15"
+                  name="shifter"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c29cd56b-ae87-4265-9b1a-5a90ad3eee9f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections Type%3DBitArray)]) ParameterIdentifier%3Dshifter"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="972e4df4-fa62-4c97-b787-ddddd594726f"
+                      LastKnownName="BitArray"
+                      LastKnownLocation="Package2_1037.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9552883b-66d3-4a38-9bee-fbada6cbde87"
+            name="run"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0f66058d-9862-4601-84ab-37e442e2eb65"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataManip Member%3Drun"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e37a1f4e-8fd5-48e2-b288-d7d78e4bacab"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba920b12-5c62-4a5a-8a9e-04932bd8e8fa">
+                    <propertyInstance
+                      Id="cbfe7c27-73e1-4208-8765-7c2470fc1a9c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0d2a7ad-95b0-43a6-8576-0725e1805705">
+                    <propertyInstance
+                      Id="a8d2e892-4fdb-45fa-900e-32137b962c5e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8aa2a74-fd7d-4654-93e4-af3ce71fc8bd">
+                    <propertyInstance
+                      Id="02333b4e-fca9-4a50-9024-f5caad381f2d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc30fc47-e8a1-42e0-8aeb-c7ec55f6bbb2">
+                    <propertyInstance
+                      Id="805f8fc2-553d-41ff-af90-b7f1680de804"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ae906ad-2677-489a-832a-0e76e1fe4b39">
+                    <propertyInstance
+                      Id="222ad0ca-11e3-4f3f-b607-96b2cefc4037"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68f25e34-9a71-47d3-820b-b9d4a9751455">
+                    <propertyInstance
+                      Id="0a4750a9-52a7-410a-8511-108dc693758f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="998536a2-619d-47db-9589-edb4693909ec"
+        name="dataMove"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="87c26a37-b7be-435b-952f-58d8d04c0abf"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataMove"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f88f7980-78de-4b2c-b41f-261110858ae4"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9ca2f234-4b66-4944-8229-211c07ea27bc">
+                <propertyInstance
+                  Id="a51a3510-d75d-4042-8877-8b2012a97928"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8d5b4e9-1918-4e27-aaab-93b8e9967737">
+                <propertyInstance
+                  Id="7c05def0-a7fe-4be9-9fbc-8f043a0e16e6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="70b366ce-7693-48ef-877a-f74764498c51">
+                <propertyInstance
+                  Id="f0425751-e991-45c6-acee-2dad99a5e3b1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2dbd435f-c5e2-4788-a3b8-e3b8f684ac86">
+                <propertyInstance
+                  Id="ec2b2697-32c1-4554-8ae7-850acb69987d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9a6f1a27-a8a8-4128-bc2f-e0496704c6e9">
+                <propertyInstance
+                  Id="4aa139a7-b2e6-4ed6-9d43-041747f0620b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="19807661-f029-4909-86f9-66727991a563"
+            isSubstitutable="false">
+            <classMoniker
+              Id="79e9b41f-aedd-4c7e-8378-ee6e9020f03a"
+              LastKnownName="Instruction"
+              LastKnownLocation="Package_1037.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="603d52a2-1e86-4e93-a989-1a60385d90fd"
+            name="dataMove"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f1eb9e21-1dce-4580-95c5-3435e152f217"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FDaniel%2FDocuments%2FGitHub%2FCode%2FArmSim%2Fprototype%2Fsrc%2FMicroProcessor%2Fbin%2FDebug%2FMicroProcessor.exe Namespace%3Darmsim Type%3DdataMove Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="693cfaee-95c0-4172-abaf-e8e74fcf80d7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c01fa7b4-42e6-44c9-9f4b-a3c2965de763">
+                    <propertyInstance
+                      Id="22807eab-4fa4-4011-bfc7-c74f1d214d83"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="439f6cdd-2da8-4686-9143-49b1e9e77cc1">
+                    <propertyInstance
+                      Id="75a4abb3-3238-4b18-82e6-8b8b26d392bf"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b788d70c-0348-4052-99b2-982381c86f29">
+                    <propertyInstance
+                      Id="95074cc8-3ffc-4414-bac5-f78022bfebca"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d31035d3-d191-43aa-b337-035bd60e932f">
+                    <propertyInstance
+                      Id="620dadb6-25ea-4992-a7e3-bff1f77a4346"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="275ad131-458c-4f00-8992-f4b8e2b67f97">
+                    <propertyInstance
+                      Id="49a50933-bf98-46f1-a871-835b38f42750"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f28a500c-8ba3-48cf-af5d-e31f1e6b546e">
+                    <propertyInstance
+                      Id="ac3aa064-c0c7-49a3-b856-656d17ac7afb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
