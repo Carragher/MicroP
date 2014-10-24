@@ -1116,3 +1116,183 @@ Loader: MD5 Hash passed
 Loader: bit equals True
 Loader: We have passed the test cases
 Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-16 13:45:59
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-20 12:03:15
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-20 12:27:09
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-23 16:30:22
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-23 16:34:08
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-23 16:35:08
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-23 16:50:42
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-24 08:48:20
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-24 09:16:09
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+
+2014-10-24 09:26:42
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+Loader: Intializing test cases. WARNING Test cases only test test1.exe's hash
+loader: creating ram of size 32768
+Loader: reading elf file test1.exe
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: Entry point: 0138
+Loader: Number of program header entries: 1
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1
+Loader: MD5 Hash passed
+Loader: bit equals True
+Loader: We have passed the test cases
+Loader: HASH IS: 3500A8BEF72DFED358B25B61B7602CF1

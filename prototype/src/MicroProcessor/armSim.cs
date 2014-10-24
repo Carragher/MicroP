@@ -336,7 +336,7 @@ r10 r11 r12 r13 r14
         }
 
 
-    }
+    }//comp end
 
     //this method uses the fetch decode cycle to do things
     class CPU
@@ -364,7 +364,7 @@ r10 r11 r12 r13 r14
             BitArray bity = new BitArray(midStep);
             bool t1 = bity[27];
             bool t2 = bity[26];
-            if (t1 == false && t2 == false)
+            if (t1 == false && t2 == false) // test flags
             {
                 BitArray opcode = new BitArray(4);
                 bool sflag = bity[11];
@@ -401,6 +401,8 @@ r10 r11 r12 r13 r14
                 return dp;
             }
 
+
+
             return ist;
         }
 
@@ -413,96 +415,315 @@ r10 r11 r12 r13 r14
 
         }
     }
+   
+
 
 
     class Instruction
     {
+
        public Memory instruct = new Memory(4);
+       public uint rd;
+       public uint rm;
+       public uint rn;
+       public uint finalVal;
+       public bool isIm;
+       public uint opCode; 
+       public bool weirdCase;
+       public uint rs;//that one weird mul register
 
         public Instruction() { ;}
 
         public virtual void run() { }
 
         public uint barrelShift(BitArray shift, BitArray preIm)
-        {
-            BitArray fullVal = new BitArray(32);
-
-            
-            
-
-            return 0;
+        { // untested
+           
+            byte[] midstep = new byte[4];
+            this.Reverse(ref shift);
+            shift.CopyTo(midstep, 0);
+ 
+            int sVal = BitConverter.ToInt32(midstep, 0);
+            sVal = sVal * 2;
+            byte[] midstep2 = new byte[4];
+            this.Reverse(ref preIm);
+            preIm.CopyTo(midstep2, 0);
+            uint imNum = BitConverter.ToUInt32(midstep2, 0);
+            uint finalVal = ((imNum >> sVal) | (imNum << (32 - sVal)));
+            return finalVal;
         }
 
+        public void Reverse(ref BitArray  array)
+        {
+            int length = array.Length;
+            int mid = (length / 2);
 
-
-    }
+            for (int i = 0; i < mid; i++)
+            {
+                bool bit = array[i];
+                array[i] = array[length - i - 1];
+                array[length - i - 1] = bit;
+            }
+        }
+    }// end instruct parent 
 
     class dataManip : Instruction
     {
-        public uint rd;
-        public uint rn;
-        public uint shifts;
-        public uint immediate;
-        public bool isIm;
+
 
         public dataManip(uint dcd, BitArray op, bool sflag, bool iflag, BitArray rdm, BitArray sbz, BitArray shifter)
         {
             instruct.writeWord(0, dcd);
-
-
-
+            byte[] stuffy = new byte[4];
+            this.Reverse(ref op);
+            op.CopyTo(stuffy, 0);
+            base.opCode = BitConverter.ToUInt32(stuffy, 0);
             if (iflag)
             {
-                isIm = true;
+                base.isIm = true;
                 BitArray shift = new BitArray(4);
-                
+                for (int x = 0; x < 4; x++)
+                {
+                    shift[x] = shifter[x];
+                }
                 BitArray preIm = new BitArray(8);
-                for (int x = 4, y =0; x < 12; x++, y++)
+                for (int x = 4, y = 0; x < 12; x++, y++)
                 {
                     preIm[y] = shifter[x];
                 }
-                //reversed of what you normally would think.
-                byte b = instruct.readByte(0);
-                immediate = b;
-                //barrelShift(shift,preIm);
-                
-                BitArray convert = new BitArray(8);
-                convert[0] = rdm[3];
-                convert[1] = rdm[2];
-                convert[2] = rdm[1];
-                convert[3] = rdm[0];
+                byte[] sTest = new byte[4];
+                base.finalVal = barrelShift(shift, preIm);
+                this.Reverse(ref rdm);
                 byte[] bite = new byte[1];
-                convert.CopyTo(bite, 0);
+                rdm.CopyTo(bite, 0);
                 byte[] conAttempt2 = new byte[4];
                 conAttempt2[0] = bite[0];
-                rd = BitConverter.ToUInt32(conAttempt2, 0);
-
-
-
-
-
-                
-
-
+                base.rd = BitConverter.ToUInt32(conAttempt2, 0);
             }
             else
             {
+                base.isIm = false;
+                BitArray reg = new BitArray(4);
+                // bit 4 and bit 7 checkin em
+                if (shifter[4] && shifter[7])
+                {
+                    base.weirdCase = true;
+                    BitArray rsl = new BitArray(4);
+                    for (int x = 0; x < 4; x++)
+                    {
+                        rsl[x] = shifter[x];
+                    }
+                    byte[] rsC = new byte[4];
+                    rsl.CopyTo(rsC, 0);
+                    base.rs = BitConverter.ToUInt32(rsC, 0);
+                }
+                else
+                {
+                    base.weirdCase = false;
+                }
+                for (int x = 8, y = 0; x < 12; x++, y++)
+                {
+                    reg[y] = shifter[x];
+                }
+                this.Reverse(ref reg);
+                byte[] newb = new byte[4];
+                reg.CopyTo(newb, 0);
+                base.rn = BitConverter.ToUInt32(newb, 0);
+
+                this.Reverse(ref rdm);
+                byte[] bite = new byte[1];
+                rdm.CopyTo(bite, 0);
+                byte[] conAttempt2 = new byte[4];
+                conAttempt2[0] = bite[0];
+                base.rd = BitConverter.ToUInt32(conAttempt2, 0);
+                base.finalVal = BitConverter.ToUInt32(Computer.regRead(base.rd), 0);
+
+                this.Reverse(ref sbz);
+                byte[] m = new byte[2];
+                sbz.CopyTo(m, 0);
+                base.rm = BitConverter.ToUInt32(m, 0);
+
+
+
+
 
             }
+
+
+
+
+
+
+
         }
 
         public override void run()
         {
             base.run();
-            if (this.isIm)
+            if (base.opCode == 0xD) // mov
             {
-                uint regnum = this.rd;
-                uint val = this.immediate;
+                uint regnum = base.rd;
+                uint val = base.finalVal;
                 Computer.regSet(regnum, val);
+            }
+            if (base.opCode == 0xF) // mvn
+            {
+                uint regnum = base.rd;
+                uint val = base.finalVal;
+                val = ~val;
+                Computer.regSet(regnum, val);
+            }
+            if (base.opCode == 0x4)// add
+            {
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = BitConverter.ToUInt32(op1, 0) + base.finalVal;
+                    Computer.regSet(regnum, answer);
+
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    uint r2 = base.rm;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = BitConverter.ToUInt32(op1, 0) + BitConverter.ToUInt32(op2, 0);
+                    Computer.regSet(regnum, answer);
+                }
+            }
+            if (base.opCode == 0x2)// sub
+            {
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = base.finalVal - BitConverter.ToUInt32(op1, 0);
+                    Computer.regSet(regnum, answer);
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = BitConverter.ToUInt32(op1, 0) - BitConverter.ToUInt32(op2, 0);
+                    Computer.regSet(regnum, answer);
+                }
+            }
+            if (base.opCode == 0x3) // rsb currently dependent on wether you did sub right. We got a smart kid right here
+            {
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = BitConverter.ToUInt32(op1, 0) - base.finalVal;
+                    Computer.regSet(regnum, answer);
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = BitConverter.ToUInt32(op2, 0) - BitConverter.ToUInt32(op1, 0);
+                    Computer.regSet(regnum, answer);
+                }
+            }
+            if (base.opCode == 0x0)//and + mul because of the 4/7 bit mumbo jumbo
+            {
+                if (base.isIm && !base.weirdCase)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = (BitConverter.ToUInt32(op1, 0) & base.finalVal);
+                    Computer.regSet(regnum, answer);
+                }
+                else if(!base.weirdCase)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = (BitConverter.ToUInt32(op2, 0) & BitConverter.ToUInt32(op1, 0));
+                    Computer.regSet(regnum, answer);
+                }
+
+                if (weirdCase) // mul
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    uint r2 = base.rs;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = (BitConverter.ToUInt32(op2, 0) * BitConverter.ToUInt32(op1, 0));
+                    Computer.regSet(regnum, answer);
+
+                }
+            }
+
+            if (base.opCode == 0xC) // ORRRRRRR
+            {
+
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = (BitConverter.ToUInt32(op1, 0) | base.finalVal);
+                    Computer.regSet(regnum, answer);
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = (BitConverter.ToUInt32(op2, 0) | BitConverter.ToUInt32(op1, 0));
+                    Computer.regSet(regnum, answer);
+                }
+
+            }
+
+            if (base.opCode == 0x1) //EOR hehhehe EOR is sad 
+            {
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = (BitConverter.ToUInt32(op1, 0) ^ base.finalVal);
+                    Computer.regSet(regnum, answer);
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = (BitConverter.ToUInt32(op2, 0) ^ BitConverter.ToUInt32(op1, 0));
+                    Computer.regSet(regnum, answer);
+                }
+            }
+
+            if (base.opCode == 0xE) // BIC hahahahaha like the pens.
+            {
+                uint regnum = base.rd;
+                Computer.regSet(regnum, 0);
             }
 
         }
-
     }
 
     class dataMove : Instruction
