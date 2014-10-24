@@ -44,6 +44,7 @@ namespace armsim
         public static string lastLoadedFile;
         public static bool traceTest;
         public static uint stepCounter;
+        public static uint programCount;
 
         public static void setStop()
         {
@@ -199,6 +200,14 @@ namespace armsim
             lastLoadedFile = "";
             traceTest = true;
             stepCounter = 0;
+            programCount = 0;
+            
+        }
+
+        public static void setPcount(uint setter)
+        {
+            programCount = setter;
+            Computer.regSet(15, programCount);
             
         }
         //ITS CLOBBERING TIME!!!
@@ -364,6 +373,9 @@ r10 r11 r12 r13 r14
             BitArray bity = new BitArray(midStep);
             bool t1 = bity[27];
             bool t2 = bity[26];
+            bool t3 = bity[25];
+            bool t4 = bity[24];
+
             if (t1 == false && t2 == false) // test flags
             {
                 BitArray opcode = new BitArray(4);
@@ -400,6 +412,11 @@ r10 r11 r12 r13 r14
                 dataManip dp = new dataManip(dcd, opcode, sflag, iflag, rd, sbz, shifter);
                 return dp;
             }
+            if (t1 == true && t2 == true && t3 == true && t4 == true) // testing for swi May God have mercy
+            {
+                swi ender = new swi();
+                return ender;
+            }
 
 
 
@@ -409,9 +426,20 @@ r10 r11 r12 r13 r14
         //executes the instructions
         public bool exectute(Instruction inst)
         {
+            if (inst is swi)
+            {
+                return false;
+            }
             inst.run();
             Thread.Sleep(250);
-            return true;
+            if (inst.instruct.readWord(0) == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 
         }
     }
@@ -719,13 +747,38 @@ r10 r11 r12 r13 r14
 
             if (base.opCode == 0xE) // BIC hahahahaha like the pens.
             {
-                uint regnum = base.rd;
-                Computer.regSet(regnum, 0);
+                if (base.isIm)
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    uint answer = (BitConverter.ToUInt32(op1, 0) & (~base.finalVal));
+                    Computer.regSet(regnum, answer);
+                }
+                else
+                {
+                    uint regnum = base.rd;
+                    uint r1 = base.rm;
+                    uint r2 = base.rn;
+                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op2 = Computer.regRead(r2);
+                    uint answer = (BitConverter.ToUInt32(op2, 0) & (~BitConverter.ToUInt32(op1, 0)));
+                    Computer.regSet(regnum, answer);
+                }
             }
 
         }
     }
 
+    class swi : Instruction
+    {
+        public swi()
+        {
+            base.instruct.writeWord(0, 0);
+        }
+
+
+    }
     class dataMove : Instruction
     {
 
@@ -813,6 +866,8 @@ r10 r11 r12 r13 r14
 					strm.Seek(structArray[x].p_offset, SeekOrigin.Begin);
 					strm.Read(mem.RAM,(int)structArray[x].p_vaddr, (int)structArray[x].p_filesz);
 				}
+                Computer.setPcount((uint)elfHeader.e_entry);
+                
 
 
 
@@ -1069,6 +1124,7 @@ r10 r11 r12 r13 r14
 				string file = cmdline [y];
 				Computer.log.WriteLine ("Loader: reading elf file " + file);
 				ReadElf.ReadELfData (file, ref Computer.outerRam);
+                
                 
 			}
 			if (test == true) {
