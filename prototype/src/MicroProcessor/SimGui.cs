@@ -44,6 +44,16 @@ namespace armsim
             }
 
         }
+        public void update()
+        {
+            regGrid.Rows.Clear();
+            for (uint x = 0; x < 16; x++)
+            {
+                string rnum = "r" + x.ToString();
+                string[] row = new string[] { rnum, BitConverter.ToUInt32(Computer.regRead(x), 0).ToString("X8") };
+                regGrid.Rows.Add(row);
+            }
+        }
 
         //reset button that sets all the things back to 0
         private void button1_Click(object sender, EventArgs e)
@@ -138,6 +148,7 @@ namespace armsim
                 {
                     string rnum = "r" + x.ToString();
                     string[] row = new string[] { rnum, BitConverter.ToUInt32(Computer.regRead(x), 0).ToString("X8") };
+                    Computer.log.WriteLine(row);
                     regGrid.Rows.Add(row);
                 }
                 stackView.Rows.Clear();

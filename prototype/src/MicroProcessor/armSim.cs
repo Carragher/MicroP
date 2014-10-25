@@ -45,6 +45,7 @@ namespace armsim
         public static bool traceTest;
         public static uint stepCounter;
         public static uint programCount;
+        public static bool exec;
 
         public static void setStop()
         {
@@ -201,6 +202,8 @@ namespace armsim
             traceTest = true;
             stepCounter = 0;
             programCount = 0;
+            exec = false;
+            
             
         }
 
@@ -220,6 +223,7 @@ namespace armsim
                outerRam.RAM[x] = 0x00;
            }
            byte[] b =BitConverter.GetBytes(outerRam.readWord(0));
+           byte[] c = BitConverter.GetBytes(Computer.programCount);
            r0.RAM = b;
            r1.RAM = b;
            r2.RAM = b;
@@ -235,7 +239,7 @@ namespace armsim
            r12.RAM = b;
            r13.RAM = b;
            r14.RAM = b;
-           r15.RAM = b;
+           r15.RAM = c;
         
         }
         //this initializes the registers
@@ -258,6 +262,7 @@ namespace armsim
             Computer.r13 = new Register();
             Computer.r14 = new Register();
             Computer.r15 = new Register();
+            Computer.regSet(13, 0x00007000);
 
         }
 
@@ -284,30 +289,30 @@ namespace armsim
                 Computer.log.WriteLine("Prototype: Running in a loop");
                 int addr = Convert.ToInt32(r15.readWord(0));
                 uint fetched = processor.fetch(r15.readWord(0));
-                addr += 4;
-                r15.writeWord(0, Convert.ToUInt32(addr));
-
+               
                 if (fetched == 0)
                 {
                     break;
                 }
                 Instruction dcded = processor.decode(fetched);
                 processor.exectute(dcded);
+                r15.writeWord(0, Convert.ToUInt32(addr));
                 if (traceTest)
             {
-                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8") + " " + Computer.HashSet() +" " + "0000" + " 0=" + r0.readWord(0).ToString("x8") + " 1=" + r1.readWord(0).ToString("x8") + " 2=" + r2.readWord(0).ToString("x8") + " 3=" + r3.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("4=" + r4.readWord(0).ToString("x8") + " 5=" + r5.readWord(0).ToString("x8") + " 6=" + r6.readWord(0).ToString("x8") + " 7=" + r7.readWord(0).ToString("x8") + " 8=" + r8.readWord(0).ToString("x8") + " 9=" + r9.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("10=" + r10.readWord(0).ToString("x8") + " 11=" + r11.readWord(0).ToString("x8") + " 12=" + r12.readWord(0).ToString("x8") + " 13=" + r13.readWord(0).ToString("x8") + " 14=" + r14.readWord(0).ToString("x8"));
+                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8").ToUpper() + " " + Computer.HashSet() + " " + "0000" + " 0=" + r0.readWord(0).ToString("x8").ToUpper() + " 1=" + r1.readWord(0).ToString("x8").ToUpper() + " 2=" + r2.readWord(0).ToString("x8").ToUpper() + " 3=" + r3.readWord(0).ToString("x8").ToUpper());
+                Computer.Trace.WriteLine("       " + " 4=" + r4.readWord(0).ToString("x8").ToUpper() + " 5=" + r5.readWord(0).ToString("x8").ToUpper() + " 6=" + r6.readWord(0).ToString("x8").ToUpper() + " 7=" + r7.readWord(0).ToString("x8").ToUpper() + " 8=" + r8.readWord(0).ToString("x8").ToUpper() + " 9=" + r9.readWord(0).ToString("x8").ToUpper());
+                Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
             }
+                addr += 4;
+                r15.writeWord(0, Convert.ToUInt32(addr));
+
                 
             }
             stop = false;
-            if (traceTest)
-            {
-                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8") + " " + Computer.HashSet() + " " + "0000" + " 0=" + r0.readWord(0).ToString("x8") + " 1=" + r1.readWord(0).ToString("x8") + " 2=" + r2.readWord(0).ToString("x8") + " 3=" + r3.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("4=" + r4.readWord(0).ToString("x8") + " 5=" + r5.readWord(0).ToString("x8") + " 6=" + r6.readWord(0).ToString("x8") + " 7=" + r7.readWord(0).ToString("x8") + " 8=" + r8.readWord(0).ToString("x8") + " 9=" + r9.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("10=" + r10.readWord(0).ToString("x8") + " 11=" + r11.readWord(0).ToString("x8") + " 12=" + r12.readWord(0).ToString("x8") + " 13=" + r13.readWord(0).ToString("x8") + " 14=" + r14.readWord(0).ToString("x8"));
-            }
+            
+           
+            
+          
             
         }
         //runs the fetch decode execute system in one cycle
@@ -335,9 +340,9 @@ r10 r11 r12 r13 r14
             }
             if (traceTest)
             {
-                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8") + " " + Computer.HashSet() +" " + "0000" + " 0=" + r0.readWord(0).ToString("x8") + " 1=" + r1.readWord(0).ToString("x8") + " 2=" + r2.readWord(0).ToString("x8") + " 3=" + r3.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("4=" + r4.readWord(0).ToString("x8") + " 5=" + r5.readWord(0).ToString("x8") + " 6=" + r6.readWord(0).ToString("x8") + " 7=" + r7.readWord(0).ToString("x8") + " 8=" + r8.readWord(0).ToString("x8") + " 9=" + r9.readWord(0).ToString("x8"));
-                Computer.Trace.WriteLine("10=" + r10.readWord(0).ToString("x8") + " 11=" + r11.readWord(0).ToString("x8") + " 12=" + r12.readWord(0).ToString("x8") + " 13=" + r13.readWord(0).ToString("x8") + " 14=" + r14.readWord(0).ToString("x8"));
+                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8").ToUpper() + " " + Computer.HashSet() + " " + "0000" + " 0=" + r0.readWord(0).ToString("x8").ToUpper() + " 1=" + r1.readWord(0).ToString("x8").ToUpper() + " 2=" + r2.readWord(0).ToString("x8").ToUpper() + " 3=" + r3.readWord(0).ToString("x8").ToUpper());
+                Computer.Trace.WriteLine("       " + " 4=" + r4.readWord(0).ToString("x8").ToUpper() + " 5=" + r5.readWord(0).ToString("x8").ToUpper() + " 6=" + r6.readWord(0).ToString("x8").ToUpper() + " 7=" + r7.readWord(0).ToString("x8").ToUpper() + " 8=" + r8.readWord(0).ToString("x8").ToUpper() + " 9=" + r9.readWord(0).ToString("x8").ToUpper());
+                Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
             }
             stop = false;
 
@@ -360,12 +365,13 @@ r10 r11 r12 r13 r14
         //grabs a word to decode and use an instruction
         public uint fetch(uint address)
         {
-            Computer.outerRam.readWord(Convert.ToInt32(address));
-            return 0;
+            uint fetche = Convert.ToUInt32(Computer.outerRam.readWord(Convert.ToInt32(address)));
+            return fetche;
         }
         //decodes an instruction
         public Instruction decode(uint dcd)
         {
+            Computer.log.WriteLine(Computer.stepCounter + " " + dcd);
             Instruction ist = new Instruction();
             //test bits 27 and 26;
             byte[] midStep = new byte[4];
@@ -431,7 +437,10 @@ r10 r11 r12 r13 r14
                 return false;
             }
             inst.run();
-            Thread.Sleep(250);
+            if (!Computer.exec)
+            {
+                Thread.Sleep(250);
+            }
             if (inst.instruct.readWord(0) == 0)
             {
                 return false;
@@ -458,6 +467,7 @@ r10 r11 r12 r13 r14
        public bool isIm;
        public uint opCode; 
        public bool weirdCase;
+       public BitArray rShift; 
        public uint rs;//that one weird mul register
 
         public Instruction() { ;}
@@ -502,6 +512,7 @@ r10 r11 r12 r13 r14
         public dataManip(uint dcd, BitArray op, bool sflag, bool iflag, BitArray rdm, BitArray sbz, BitArray shifter)
         {
             instruct.writeWord(0, dcd);
+            base.rShift = shifter;
             byte[] stuffy = new byte[4];
             this.Reverse(ref op);
             op.CopyTo(stuffy, 0);
@@ -527,6 +538,11 @@ r10 r11 r12 r13 r14
                 byte[] conAttempt2 = new byte[4];
                 conAttempt2[0] = bite[0];
                 base.rd = BitConverter.ToUInt32(conAttempt2, 0);
+
+                this.Reverse(ref sbz);
+                byte[] sbstuff = new byte[4];
+                sbz.CopyTo(sbstuff, 0);
+                base.rn = BitConverter.ToUInt32(sbstuff, 0);
             }
             else
             {
@@ -542,6 +558,7 @@ r10 r11 r12 r13 r14
                         rsl[x] = shifter[x];
                     }
                     byte[] rsC = new byte[4];
+                    this.Reverse(ref rsl);
                     rsl.CopyTo(rsC, 0);
                     base.rs = BitConverter.ToUInt32(rsC, 0);
                 }
@@ -567,7 +584,7 @@ r10 r11 r12 r13 r14
                 base.finalVal = BitConverter.ToUInt32(Computer.regRead(base.rd), 0);
 
                 this.Reverse(ref sbz);
-                byte[] m = new byte[2];
+                byte[] m = new byte[4];
                 sbz.CopyTo(m, 0);
                 base.rm = BitConverter.ToUInt32(m, 0);
 
@@ -585,18 +602,112 @@ r10 r11 r12 r13 r14
 
         }
 
+        public void shifter()
+        {// non little endian
+            bool b = base.rShift[7];
+            bool t1 = base.rShift[5];
+            bool t2 = base.rShift[6];
+            uint shiftnum;
+            uint rstuff  = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
+            bool ror = true;
+            if (!base.rShift[0] && !base.rShift[4])
+            {
+                ror = true;
+            }
+            
+           
+            
+
+            if (b)
+            {
+                //reg based
+                BitArray rsl = new BitArray(4);
+                for (int x = 0; x < 4; x++)
+                {
+                    rsl[x] = base.rShift[x];
+                }
+                byte[] rsC = new byte[4];
+                base.Reverse(ref rsl);
+                rsl.CopyTo(rsC, 0);
+                uint r = BitConverter.ToUInt32(rsC, 0);
+                shiftnum = BitConverter.ToUInt32( Computer.regRead(r),0);
+
+
+            }
+            else
+            {// im based
+                BitArray rsl = new BitArray(5);
+                for (int x = 0; x < 5; x++)
+                {
+                    rsl[x] = base.rShift[x];
+                }
+                byte[] rsC = new byte[4];
+                base.Reverse(ref rsl);
+                rsl.CopyTo(rsC, 0);
+                shiftnum = BitConverter.ToUInt32(rsC, 0);
+            }
+            long rst = Convert.ToInt64(rstuff);
+            int shi = Convert.ToInt32(shiftnum);
+            if (!t1 && !t2)//lsl
+            {
+                base.finalVal = (rstuff << shi);
+            }
+            if (!t1 && t2)//lsr
+            {
+                base.finalVal = (rstuff >> shi);
+            }
+            if (t1 && !t2)//asr
+            {
+                base.finalVal = (uint)((int)rstuff >> (int)shiftnum);
+            }
+            if (t1 && t2)//ror
+            {
+                if (ror)
+                {
+                    base.finalVal = ((rstuff >> shi) | (rstuff <<32- shi));
+                }
+                else
+                {//num = (data >> 1) | (data << (32 - 1)); shiftedVal = (rM >> 1) | (rM << (32 - 1)); } //ROR Reg w/ Extend
+                    base.finalVal =  (uint)((rst >> 1) | (rst << (32-1)));
+                }
+
+
+            }
+
+        }
+
         public override void run()
         {
             base.run();
+
+            uint regnum = base.rd;
+            uint r1 = base.rm;
+            uint r2 = base.rn;
+            if (regnum == 15 || r1 == 15 || r2 == 15)
+            {
+                bool b = true;
+                uint addr =BitConverter.ToUInt32(Computer.regRead(15),0);
+                addr = addr + 8;
+                Computer.regSet(15, addr);
+            }
+            
+            if(!base.isIm){
+              shifter();
+            }
+            
+            
+
+
+
             if (base.opCode == 0xD) // mov
             {
-                uint regnum = base.rd;
+               
                 uint val = base.finalVal;
                 Computer.regSet(regnum, val);
             }
             if (base.opCode == 0xF) // mvn
             {
-                uint regnum = base.rd;
+                
                 uint val = base.finalVal;
                 val = ~val;
                 Computer.regSet(regnum, val);
@@ -605,8 +716,8 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
+                    
+                    
                     byte[] op1 = Computer.regRead(r1);
                     uint answer = BitConverter.ToUInt32(op1, 0) + base.finalVal;
                     Computer.regSet(regnum, answer);
@@ -614,12 +725,11 @@ r10 r11 r12 r13 r14
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
-                    uint r2 = base.rm;
+                    
+                    
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = BitConverter.ToUInt32(op1, 0) + BitConverter.ToUInt32(op2, 0);
+                    uint answer = BitConverter.ToUInt32(op1, 0) + base.finalVal;
                     Computer.regSet(regnum, answer);
                 }
             }
@@ -627,20 +737,18 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
-                    byte[] op1 = Computer.regRead(r1);
-                    uint answer = base.finalVal - BitConverter.ToUInt32(op1, 0);
+                    
+                    byte[] op1 = Computer.regRead(r2);
+                    uint answer =  BitConverter.ToUInt32(op1, 0) - base.finalVal;
                     Computer.regSet(regnum, answer);
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                   
+                    
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = BitConverter.ToUInt32(op1, 0) - BitConverter.ToUInt32(op2, 0);
+                    uint answer = BitConverter.ToUInt32(op1, 0) - base.finalVal;
                     Computer.regSet(regnum, answer);
                 }
             }
@@ -648,20 +756,19 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
-                    byte[] op1 = Computer.regRead(r1);
-                    uint answer = BitConverter.ToUInt32(op1, 0) - base.finalVal;
+                   
+                   
+                    byte[] op1 = Computer.regRead(r2);
+                    uint answer = base.finalVal - BitConverter.ToUInt32(op1, 0)  ;
                     Computer.regSet(regnum, answer);
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                  
+                   
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = BitConverter.ToUInt32(op2, 0) - BitConverter.ToUInt32(op1, 0);
+                    uint answer = BitConverter.ToUInt32(op2, 0) - base.finalVal;
                     Computer.regSet(regnum, answer);
                 }
             }
@@ -669,32 +776,31 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm && !base.weirdCase)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
+                    
+                    
                     byte[] op1 = Computer.regRead(r1);
                     uint answer = (BitConverter.ToUInt32(op1, 0) & base.finalVal);
                     Computer.regSet(regnum, answer);
                 }
                 else if(!base.weirdCase)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                    
+                    
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = (BitConverter.ToUInt32(op2, 0) & BitConverter.ToUInt32(op1, 0));
+                    uint answer = (BitConverter.ToUInt32(op2, 0) & base.finalVal);
                     Computer.regSet(regnum, answer);
                 }
 
                 if (weirdCase) // mul
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
-                    uint r2 = base.rs;
-                    byte[] op1 = Computer.regRead(r1);
-                    byte[] op2 = Computer.regRead(r2);
+                    
+                    uint r1o = base.rn;
+                    uint r2o = base.rs;
+                    byte[] op1 = Computer.regRead(r1o);
+                    byte[] op2 = Computer.regRead(r2o);
                     uint answer = (BitConverter.ToUInt32(op2, 0) * BitConverter.ToUInt32(op1, 0));
-                    Computer.regSet(regnum, answer);
+                    Computer.regSet(base.rm, answer);
 
                 }
             }
@@ -704,20 +810,17 @@ r10 r11 r12 r13 r14
 
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
+                   
                     byte[] op1 = Computer.regRead(r1);
                     uint answer = (BitConverter.ToUInt32(op1, 0) | base.finalVal);
                     Computer.regSet(regnum, answer);
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                    
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = (BitConverter.ToUInt32(op2, 0) | BitConverter.ToUInt32(op1, 0));
+                    uint answer = (BitConverter.ToUInt32(op2, 0) | base.finalVal);
                     Computer.regSet(regnum, answer);
                 }
 
@@ -727,17 +830,14 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
+                    
                     byte[] op1 = Computer.regRead(r1);
                     uint answer = (BitConverter.ToUInt32(op1, 0) ^ base.finalVal);
                     Computer.regSet(regnum, answer);
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                    
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
                     uint answer = (BitConverter.ToUInt32(op2, 0) ^ BitConverter.ToUInt32(op1, 0));
@@ -749,20 +849,17 @@ r10 r11 r12 r13 r14
             {
                 if (base.isIm)
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rn;
+                    
                     byte[] op1 = Computer.regRead(r1);
                     uint answer = (BitConverter.ToUInt32(op1, 0) & (~base.finalVal));
                     Computer.regSet(regnum, answer);
                 }
                 else
                 {
-                    uint regnum = base.rd;
-                    uint r1 = base.rm;
-                    uint r2 = base.rn;
+                   
                     byte[] op1 = Computer.regRead(r1);
                     byte[] op2 = Computer.regRead(r2);
-                    uint answer = (BitConverter.ToUInt32(op2, 0) & (~BitConverter.ToUInt32(op1, 0)));
+                    uint answer = (BitConverter.ToUInt32(op2, 0) & (~base.finalVal));
                     Computer.regSet(regnum, answer);
                 }
             }
@@ -1070,6 +1167,7 @@ r10 r11 r12 r13 r14
 			int y = 0;
 			bool loader = false;
 			bool test = false;
+            
 			uint memsize = 32768;
 			while (parser == true) {
 				int len = cmdline.Length;
@@ -1101,8 +1199,12 @@ r10 r11 r12 r13 r14
 
 					break;
 
+                case "--exec":
+                    Computer.exec = true;
+                    break;
+
 				default: 
-					Computer.log.WriteLine ("you have entered an invalid command line. The current valid commands are --test, --mem [number], load [file] ");
+					Computer.log.WriteLine ("you have entered an invalid command line. The current valid commands are --exec, --test, --mem [number], load [file] ");
 					break;
 
 				}
@@ -1157,10 +1259,16 @@ r10 r11 r12 r13 r14
                 testBites = Computer.regRead(2);
                 uint val = BitConverter.ToUInt32(testBites,0);
                 Debug.Assert(48== val);
+                Computer.regSet(2, 0);
 
                 
                 
 			}
+
+            if (Computer.exec == true)
+            {
+                Computer.run();
+            }
 			
 		}
 	}
@@ -1195,7 +1303,8 @@ r10 r11 r12 r13 r14
               //  Computer.log.Write("Prototype: Invalid input detected");
                // doIRun = false;
            // }
-            if (doIRun)
+            
+            if (doIRun && !Computer.exec)
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
