@@ -11,6 +11,7 @@ using System.Threading;
 
 namespace armsim
 {
+  
     public partial class SimGui : Form
     {
         // use me to intialize all the things you dont want the user touching :D
@@ -42,6 +43,9 @@ namespace armsim
                 stackView.Rows.Add(row);
                 p += 4;
             }
+            Computer.stt = true;
+            timer1.Interval = 8000;
+            timer1.Start();
 
         }
         public void update()
@@ -184,6 +188,7 @@ namespace armsim
         private void stepBtn_Click(object sender, EventArgs e)
         {
             new Thread(Computer.step).Start();
+            
             regGrid.Rows.Clear();
             for (uint x = 0; x < 16; x++)
             {
@@ -217,6 +222,8 @@ namespace armsim
         {
 
         }
+
+        
 
         private void SimGui_Load(object sender, EventArgs e)
         {
@@ -293,6 +300,13 @@ namespace armsim
 
             
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            update();
+
+        }
     }
+   
 }
 

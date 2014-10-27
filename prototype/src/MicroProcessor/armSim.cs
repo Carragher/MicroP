@@ -16,7 +16,7 @@ namespace armsim
 {
     //this class works as a storage device for hardware variables E.g ram and Cpu
     // It also works as the buffer that stops the gui from directly accessing the model
-
+   
     class Computer
     {
 
@@ -46,6 +46,10 @@ namespace armsim
         public static uint stepCounter;
         public static uint programCount;
         public static bool exec;
+        public static SimGui sim;
+        public static bool inT;
+      
+        public static bool stt;
 
         public static void setStop()
         {
@@ -203,6 +207,8 @@ namespace armsim
             stepCounter = 0;
             programCount = 0;
             exec = false;
+           
+            stt = false;
             
             
         }
@@ -283,8 +289,10 @@ namespace armsim
         //Runs the fetch decode execute system in a loop
         public static void run()
         {
+            Computer.inT = true;
             while (!stop)
             {
+                
                 Computer.stepCounter += 1;
                 Computer.log.WriteLine("Prototype: Running in a loop");
                 int addr = Convert.ToInt32(r15.readWord(0));
@@ -308,6 +316,7 @@ namespace armsim
 
                 
             }
+            Computer.inT = false;
             stop = false;
             
            
@@ -344,7 +353,9 @@ r10 r11 r12 r13 r14
                 Computer.Trace.WriteLine("       " + " 4=" + r4.readWord(0).ToString("x8").ToUpper() + " 5=" + r5.readWord(0).ToString("x8").ToUpper() + " 6=" + r6.readWord(0).ToString("x8").ToUpper() + " 7=" + r7.readWord(0).ToString("x8").ToUpper() + " 8=" + r8.readWord(0).ToString("x8").ToUpper() + " 9=" + r9.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
             }
+            
             stop = false;
+          
 
 
         }
@@ -1308,7 +1319,8 @@ r10 r11 r12 r13 r14
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new SimGui());
+                Computer.sim = new SimGui();
+                Application.Run(Computer.sim);
             }
             Computer.log.Close();
             Computer.Trace.Close();

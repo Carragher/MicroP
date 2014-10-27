@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimGui));
             this.resetBtn = new System.Windows.Forms.Button();
             this.output = new System.Windows.Forms.TextBox();
@@ -54,28 +55,29 @@
             this.Byte16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Memory = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.memTxt = new System.Windows.Forms.TextBox();
+            this.memGo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.stackView = new System.Windows.Forms.DataGridView();
+            this.Adrress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.word1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.enterBtn = new System.Windows.Forms.Button();
             this.inputTxt = new System.Windows.Forms.TextBox();
             this.termTxt = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dissBox = new System.Windows.Forms.TextBox();
             this.regGrid = new System.Windows.Forms.DataGridView();
             this.Reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegisterVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.runBtn = new System.Windows.Forms.Button();
+            this.stepBtn = new System.Windows.Forms.Button();
+            this.stopBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.flagPanel = new System.Windows.Forms.CheckedListBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.stopBtn = new System.Windows.Forms.Button();
-            this.stepBtn = new System.Windows.Forms.Button();
-            this.runBtn = new System.Windows.Forms.Button();
-            this.stackView = new System.Windows.Forms.DataGridView();
-            this.Adrress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.word1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dissBox = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,13 +86,15 @@
             this.breakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleTraceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.memGo = new System.Windows.Forms.Button();
-            this.memTxt = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.memGrid)).BeginInit();
             this.Memory.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stackView)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -100,8 +104,6 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stackView)).BeginInit();
-            this.tabPage4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -325,6 +327,23 @@
             this.tabPage1.Text = "Memory";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // memTxt
+            // 
+            this.memTxt.Location = new System.Drawing.Point(3, 140);
+            this.memTxt.Name = "memTxt";
+            this.memTxt.Size = new System.Drawing.Size(693, 20);
+            this.memTxt.TabIndex = 8;
+            // 
+            // memGo
+            // 
+            this.memGo.Location = new System.Drawing.Point(696, 141);
+            this.memGo.Name = "memGo";
+            this.memGo.Size = new System.Drawing.Size(81, 23);
+            this.memGo.TabIndex = 7;
+            this.memGo.Text = "Fill Mem";
+            this.memGo.UseVisualStyleBackColor = true;
+            this.memGo.Click += new System.EventHandler(this.memGo_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
@@ -337,6 +356,30 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stack";
             // 
+            // stackView
+            // 
+            this.stackView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stackView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Adrress,
+            this.word1});
+            this.stackView.Location = new System.Drawing.Point(-4, -1);
+            this.stackView.Name = "stackView";
+            this.stackView.ReadOnly = true;
+            this.stackView.Size = new System.Drawing.Size(782, 163);
+            this.stackView.TabIndex = 0;
+            // 
+            // Adrress
+            // 
+            this.Adrress.HeaderText = "Address";
+            this.Adrress.Name = "Adrress";
+            this.Adrress.ReadOnly = true;
+            // 
+            // word1
+            // 
+            this.word1.HeaderText = "Word";
+            this.word1.Name = "word1";
+            this.word1.ReadOnly = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.enterBtn);
@@ -345,7 +388,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(777, 238);
+            this.tabPage3.Size = new System.Drawing.Size(777, 163);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Terminal";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -383,6 +426,30 @@
             this.termTxt.Size = new System.Drawing.Size(782, 138);
             this.termTxt.TabIndex = 9;
             this.termTxt.Text = "I enjoy pie test";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dissBox);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(777, 163);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Disassembly";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dissBox
+            // 
+            this.dissBox.AcceptsReturn = true;
+            this.dissBox.Location = new System.Drawing.Point(-1, 0);
+            this.dissBox.Multiline = true;
+            this.dissBox.Name = "dissBox";
+            this.dissBox.ReadOnly = true;
+            this.dissBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.dissBox.Size = new System.Drawing.Size(778, 161);
+            this.dissBox.TabIndex = 0;
+            this.dissBox.Text = resources.GetString("dissBox.Text");
+            this.dissBox.TextChanged += new System.EventHandler(this.dissBox_TextChanged);
             // 
             // regGrid
             // 
@@ -466,6 +533,36 @@
             this.splitContainer2.SplitterDistance = 160;
             this.splitContainer2.TabIndex = 0;
             // 
+            // runBtn
+            // 
+            this.runBtn.Location = new System.Drawing.Point(525, 45);
+            this.runBtn.Name = "runBtn";
+            this.runBtn.Size = new System.Drawing.Size(75, 23);
+            this.runBtn.TabIndex = 14;
+            this.runBtn.Text = "Run";
+            this.runBtn.UseVisualStyleBackColor = true;
+            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
+            // 
+            // stepBtn
+            // 
+            this.stepBtn.Location = new System.Drawing.Point(525, 78);
+            this.stepBtn.Name = "stepBtn";
+            this.stepBtn.Size = new System.Drawing.Size(75, 23);
+            this.stepBtn.TabIndex = 13;
+            this.stepBtn.Text = "Step";
+            this.stepBtn.UseVisualStyleBackColor = true;
+            this.stepBtn.Click += new System.EventHandler(this.stepBtn_Click);
+            // 
+            // stopBtn
+            // 
+            this.stopBtn.Location = new System.Drawing.Point(525, 107);
+            this.stopBtn.Name = "stopBtn";
+            this.stopBtn.Size = new System.Drawing.Size(75, 23);
+            this.stopBtn.TabIndex = 12;
+            this.stopBtn.Text = "Stop";
+            this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -489,88 +586,6 @@
             this.flagPanel.Name = "flagPanel";
             this.flagPanel.Size = new System.Drawing.Size(59, 64);
             this.flagPanel.TabIndex = 10;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // stopBtn
-            // 
-            this.stopBtn.Location = new System.Drawing.Point(525, 107);
-            this.stopBtn.Name = "stopBtn";
-            this.stopBtn.Size = new System.Drawing.Size(75, 23);
-            this.stopBtn.TabIndex = 12;
-            this.stopBtn.Text = "Stop";
-            this.stopBtn.UseVisualStyleBackColor = true;
-            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
-            // 
-            // stepBtn
-            // 
-            this.stepBtn.Location = new System.Drawing.Point(525, 78);
-            this.stepBtn.Name = "stepBtn";
-            this.stepBtn.Size = new System.Drawing.Size(75, 23);
-            this.stepBtn.TabIndex = 13;
-            this.stepBtn.Text = "Step";
-            this.stepBtn.UseVisualStyleBackColor = true;
-            this.stepBtn.Click += new System.EventHandler(this.stepBtn_Click);
-            // 
-            // runBtn
-            // 
-            this.runBtn.Location = new System.Drawing.Point(525, 45);
-            this.runBtn.Name = "runBtn";
-            this.runBtn.Size = new System.Drawing.Size(75, 23);
-            this.runBtn.TabIndex = 14;
-            this.runBtn.Text = "Run";
-            this.runBtn.UseVisualStyleBackColor = true;
-            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
-            // 
-            // stackView
-            // 
-            this.stackView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stackView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Adrress,
-            this.word1});
-            this.stackView.Location = new System.Drawing.Point(-4, -1);
-            this.stackView.Name = "stackView";
-            this.stackView.ReadOnly = true;
-            this.stackView.Size = new System.Drawing.Size(782, 163);
-            this.stackView.TabIndex = 0;
-            // 
-            // Adrress
-            // 
-            this.Adrress.HeaderText = "Address";
-            this.Adrress.Name = "Adrress";
-            this.Adrress.ReadOnly = true;
-            // 
-            // word1
-            // 
-            this.word1.HeaderText = "Word";
-            this.word1.Name = "word1";
-            this.word1.ReadOnly = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dissBox);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(777, 163);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Disassembly";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dissBox
-            // 
-            this.dissBox.AcceptsReturn = true;
-            this.dissBox.Location = new System.Drawing.Point(-1, 0);
-            this.dissBox.Multiline = true;
-            this.dissBox.Name = "dissBox";
-            this.dissBox.ReadOnly = true;
-            this.dissBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.dissBox.Size = new System.Drawing.Size(778, 161);
-            this.dissBox.TabIndex = 0;
-            this.dissBox.Text = resources.GetString("dissBox.Text");
-            this.dissBox.TextChanged += new System.EventHandler(this.dissBox_TextChanged);
             // 
             // toolStrip1
             // 
@@ -648,22 +663,13 @@
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
-            // memGo
+            // openFileDialog1
             // 
-            this.memGo.Location = new System.Drawing.Point(696, 141);
-            this.memGo.Name = "memGo";
-            this.memGo.Size = new System.Drawing.Size(81, 23);
-            this.memGo.TabIndex = 7;
-            this.memGo.Text = "Fill Mem";
-            this.memGo.UseVisualStyleBackColor = true;
-            this.memGo.Click += new System.EventHandler(this.memGo_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // memTxt
+            // timer1
             // 
-            this.memTxt.Location = new System.Drawing.Point(3, 140);
-            this.memTxt.Name = "memTxt";
-            this.memTxt.Size = new System.Drawing.Size(693, 20);
-            this.memTxt.TabIndex = 8;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SimGui
             // 
@@ -680,8 +686,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stackView)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regGrid)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -692,9 +701,6 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stackView)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -760,5 +766,6 @@
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.TextBox memTxt;
         private System.Windows.Forms.Button memGo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
