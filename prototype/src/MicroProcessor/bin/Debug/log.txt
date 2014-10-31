@@ -2716,3 +2716,936 @@ Prototype: Running in a loop
 20 4009754641
 Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
 Prototype: Running in a loop
+
+2014-10-28 18:48:51
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+1 3818917813
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+2 3818919073
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+3 3785367552
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+4 3785367567
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+5 3785367873
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+6 3785367841
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+7 3785367681
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+8 3785368160
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+9 3823120385
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+10 3818930180
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+11 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+12 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+13 3798224899
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+14 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+15 3816824850
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+16 3793760183
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+17 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+18 3818921986
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+19 3758424721
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+20 4009754641
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+
+2014-10-30 18:25:39
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+1 3818917813
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+2 3818919073
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+3 3785367552
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+4 3785367567
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+5 3785367873
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+6 3785367841
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+7 3785367681
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+8 3785368160
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+9 3823120385
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+10 3818930180
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+11 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+12 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+13 3798224899
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+14 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+15 3816824850
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+16 3793760183
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+17 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+18 3818921986
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+19 3758424721
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+20 4009754641
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+
+2014-10-30 18:47:52
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+
+2014-10-30 18:53:35
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+
+2014-10-30 21:24:09
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+1 3818917813
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+2 3818919073
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+3 3785367552
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+4 3785367567
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+5 3785367873
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+6 3785367841
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+7 3785367681
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+8 3785368160
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+9 3823120385
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+10 3818930180
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+11 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+12 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+13 3798224899
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+14 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+15 3816824850
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+16 3793760183
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+17 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+18 3818921986
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+19 3758424721
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+20 4009754641
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+
+2014-10-30 21:48:39
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+1 3818917813
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+2 3818919073
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+3 3785367552
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+4 3785367567
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+5 3785367873
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+6 3785367841
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+7 3785367681
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+8 3785368160
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+9 3823120385
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+10 3818930180
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+11 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+12 3796127747
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+13 3798224899
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+14 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+15 3816824850
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+16 3793760183
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+17 3791659263
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+18 3818921986
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+19 3758424721
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+20 4009754641
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+Prototype: Running in a loop
+
+2014-10-30 21:55:09
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ctest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: B9410963FF59D0E6377EA8B59DF60D2C
+
+2014-10-31 00:02:50
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+
+2014-10-31 00:05:18
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 087AFB5693DA45A6709288B8AB681CE3
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 087AFB5693DA45A6709288B8AB681CE3
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+
+2014-10-31 00:08:03
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 087AFB5693DA45A6709288B8AB681CE3
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 087AFB5693DA45A6709288B8AB681CE3
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 2292E56BD458573E2D605181FA23FE01
+Prototype: Running in a loop
+
+2014-10-31 00:13:19
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: C45511CE23EAC973C22997F13F63F464
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 7761F73FD8A560C5243A87FF9914E8D8
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 2FC52CB85BE49E20A10455A2C0FF4581
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: C821D38552899CC8C0BFC9ABD6B223AC
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 2C7DB7231112699DA97F0371E95B74ED
+Prototype: Running in a loop
+
+2014-10-31 00:16:42
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 6C377D0CEF98BD8B36B655F967C227E8
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 052F81D301E5233732796981278D34EF
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 9DF3B0A042A2436EB4CBFAF0AB30B0B5
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 520BC81C8933C77071D6393816822ECC
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+
+2014-10-31 00:21:57
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 6C377D0CEF98BD8B36B655F967C227E8
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 052F81D301E5233732796981278D34EF
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 9DF3B0A042A2436EB4CBFAF0AB30B0B5
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 520BC81C8933C77071D6393816822ECC
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop

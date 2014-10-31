@@ -310,7 +310,8 @@ namespace armsim
                 Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8").ToUpper() + " " + Computer.HashSet() + " " + "0000" + " 0=" + r0.readWord(0).ToString("x8").ToUpper() + " 1=" + r1.readWord(0).ToString("x8").ToUpper() + " 2=" + r2.readWord(0).ToString("x8").ToUpper() + " 3=" + r3.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.WriteLine("       " + " 4=" + r4.readWord(0).ToString("x8").ToUpper() + " 5=" + r5.readWord(0).ToString("x8").ToUpper() + " 6=" + r6.readWord(0).ToString("x8").ToUpper() + " 7=" + r7.readWord(0).ToString("x8").ToUpper() + " 8=" + r8.readWord(0).ToString("x8").ToUpper() + " 9=" + r9.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
-            }
+                Computer.Trace.Flush();
+                }
                 addr += 4;
                 r15.writeWord(0, Convert.ToUInt32(addr));
 
@@ -429,6 +430,48 @@ r10 r11 r12 r13 r14
                 dataManip dp = new dataManip(dcd, opcode, sflag, iflag, rd, sbz, shifter);
                 return dp;
             }
+
+            if (t1 == false && t2 == true) // load store stuff
+            {
+                //dcd, opcode, p,u,b,w,l,rd,rn,shifter
+                BitArray opcode = new BitArray(4);
+                bool im = bity[25];
+                bool p = bity[24];
+                bool u = bity[23];
+                bool b = bity[22];
+                bool w = bity[21];
+                bool l = bity[20];
+                BitArray rn = new BitArray(4);
+                BitArray rd = new BitArray(4);
+                BitArray shifter = new BitArray(12);
+
+                for (int i = 0, pb = 11; pb > -1; i++, pb--)
+                {
+                    shifter[i] = bity[pb];
+                }
+
+                opcode[0] = bity[24];
+                opcode[1] = bity[23];
+                opcode[2] = bity[22];
+                opcode[3] = bity[21];
+
+                rd[0] = bity[15];
+                rd[1] = bity[14];
+                rd[2] = bity[13];
+                rd[3] = bity[12];
+
+                rn[0] = bity[19];
+                rn[1] = bity[18];
+                rn[2] = bity[17];
+                rn[3] = bity[16];
+
+                //uint dcd, BitArray op, bool Im, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rd, BitArray rn, BitArray shifter
+                dataMove dm = new dataMove(dcd, opcode, im, p, u, b, w, l, rd, rn, shifter);
+                return dm;
+
+
+            }
+
             if (t1 == true && t2 == true && t3 == true && t4 == true) // testing for swi May God have mercy
             {
                 swi ender = new swi();
@@ -450,7 +493,7 @@ r10 r11 r12 r13 r14
             inst.run();
             if (!Computer.exec)
             {
-                Thread.Sleep(250);
+                
             }
             if (inst.instruct.readWord(0) == 0)
             {
@@ -484,6 +527,80 @@ r10 r11 r12 r13 r14
         public Instruction() { ;}
 
         public virtual void run() { }
+
+        public void shifter()
+        {// non little endian
+            bool b = rShift[7];
+            bool t1 = rShift[5];
+            bool t2 = rShift[6];
+            uint shiftnum;
+            uint rstuff = BitConverter.ToUInt32(Computer.regRead(rn), 0);
+            bool ror = true;
+            if (!rShift[0] && !rShift[4])
+            {
+                ror = true;
+            }
+
+
+
+
+            if (b)
+            {
+                //reg based
+                BitArray rsl = new BitArray(4);
+                for (int x = 0; x < 4; x++)
+                {
+                    rsl[x] = rShift[x];
+                }
+                byte[] rsC = new byte[4];
+                Reverse(ref rsl);
+                rsl.CopyTo(rsC, 0);
+                uint r = BitConverter.ToUInt32(rsC, 0);
+                shiftnum = BitConverter.ToUInt32(Computer.regRead(r), 0);
+
+
+            }
+            else
+            {// im based
+                BitArray rsl = new BitArray(5);
+                for (int x = 0; x < 5; x++)
+                {
+                    rsl[x] = rShift[x];
+                }
+                byte[] rsC = new byte[4];
+                Reverse(ref rsl);
+                rsl.CopyTo(rsC, 0);
+                shiftnum = BitConverter.ToUInt32(rsC, 0);
+            }
+            long rst = Convert.ToInt64(rstuff);
+            int shi = Convert.ToInt32(shiftnum);
+            if (!t1 && !t2)//lsl
+            {
+                finalVal = (rstuff << shi);
+            }
+            if (!t1 && t2)//lsr
+            {
+                finalVal = (rstuff >> shi);
+            }
+            if (t1 && !t2)//asr
+            {
+                finalVal = (uint)((int)rstuff >> (int)shiftnum);
+            }
+            if (t1 && t2)//ror
+            {
+                if (ror)
+                {
+                    finalVal = ((rstuff >> shi) | (rstuff << 32 - shi));
+                }
+                else
+                {//num = (data >> 1) | (data << (32 - 1)); shiftedVal = (rM >> 1) | (rM << (32 - 1)); } //ROR Reg w/ Extend
+                    finalVal = (uint)((rst >> 1) | (rst << (32 - 1)));
+                }
+
+
+            }
+
+        }
 
         public uint barrelShift(BitArray shift, BitArray preIm)
         { // untested
@@ -613,79 +730,7 @@ r10 r11 r12 r13 r14
 
         }
 
-        public void shifter()
-        {// non little endian
-            bool b = base.rShift[7];
-            bool t1 = base.rShift[5];
-            bool t2 = base.rShift[6];
-            uint shiftnum;
-            uint rstuff  = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
-            bool ror = true;
-            if (!base.rShift[0] && !base.rShift[4])
-            {
-                ror = true;
-            }
-            
-           
-            
 
-            if (b)
-            {
-                //reg based
-                BitArray rsl = new BitArray(4);
-                for (int x = 0; x < 4; x++)
-                {
-                    rsl[x] = base.rShift[x];
-                }
-                byte[] rsC = new byte[4];
-                base.Reverse(ref rsl);
-                rsl.CopyTo(rsC, 0);
-                uint r = BitConverter.ToUInt32(rsC, 0);
-                shiftnum = BitConverter.ToUInt32( Computer.regRead(r),0);
-
-
-            }
-            else
-            {// im based
-                BitArray rsl = new BitArray(5);
-                for (int x = 0; x < 5; x++)
-                {
-                    rsl[x] = base.rShift[x];
-                }
-                byte[] rsC = new byte[4];
-                base.Reverse(ref rsl);
-                rsl.CopyTo(rsC, 0);
-                shiftnum = BitConverter.ToUInt32(rsC, 0);
-            }
-            long rst = Convert.ToInt64(rstuff);
-            int shi = Convert.ToInt32(shiftnum);
-            if (!t1 && !t2)//lsl
-            {
-                base.finalVal = (rstuff << shi);
-            }
-            if (!t1 && t2)//lsr
-            {
-                base.finalVal = (rstuff >> shi);
-            }
-            if (t1 && !t2)//asr
-            {
-                base.finalVal = (uint)((int)rstuff >> (int)shiftnum);
-            }
-            if (t1 && t2)//ror
-            {
-                if (ror)
-                {
-                    base.finalVal = ((rstuff >> shi) | (rstuff <<32- shi));
-                }
-                else
-                {//num = (data >> 1) | (data << (32 - 1)); shiftedVal = (rM >> 1) | (rM << (32 - 1)); } //ROR Reg w/ Extend
-                    base.finalVal =  (uint)((rst >> 1) | (rst << (32-1)));
-                }
-
-
-            }
-
-        }
 
         public override void run()
         {
@@ -887,9 +932,341 @@ r10 r11 r12 r13 r14
 
 
     }
+
+
+
     class dataMove : Instruction
     {
 
+        public bool p;
+        public bool u;
+        public bool b;
+        public bool w;
+        public bool l;
+        public uint addr;
+        public bool scal;
+
+
+ 
+
+
+        public dataMove(uint dcd, BitArray op, bool Im, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rd, BitArray rn, BitArray shifter)
+        {
+            instruct.writeWord(0, dcd);
+            base.rShift = shifter;
+            byte[] opStuff =  new byte[4];
+            this.Reverse(ref op);
+            op.CopyTo(opStuff, 0);
+            base.opCode = BitConverter.ToUInt32(opStuff, 0);
+            this.p = pi;
+            this.u = ui;
+            this.b = bi;
+            this.w = wi;
+            this.l = li;
+            base.isIm = Im;
+            this.scal = false;
+
+            BitArray BUGFIXER = new BitArray(4);
+
+            for (int x = 0; x < 4; x++)
+            {
+                BUGFIXER[x] = shifter[7 + x];
+            }
+
+            byte[] BLARG = new byte[4];
+            
+            BUGFIXER.CopyTo(BLARG, 0);
+            base.rm = BitConverter.ToUInt32(BLARG, 0);
+
+            byte[] midstep = new byte[4];
+            this.Reverse(ref rd);
+            rd.CopyTo(midstep, 0);
+            base.rd = BitConverter.ToUInt32(midstep, 0);
+
+            byte[] midstep2 = new byte[4];
+            this.Reverse(ref rn);
+            rn.CopyTo(midstep2, 0);
+            base.rn = BitConverter.ToUInt32(midstep2, 0);
+
+        }
+
+        public override void run()
+        {
+            base.run();
+            
+            
+
+            if (!base.isIm)
+            {
+                // p=0 addr = rn
+                // p = addr = rn + operand 2
+                //u 1 pos
+                //if p and w is set then you write back to rn 
+
+
+                if (this.l) // LOAD
+                {
+                    if (this.p)
+                    {
+                        byte[] midstep = new byte[4]; // ya done messed up now
+                        this.Reverse(ref this.rShift);
+                        this.rShift.CopyTo(midstep, 0);
+
+
+                        int op2 = BitConverter.ToInt32(midstep,0);
+                        if (!this.u)
+                        {
+                            op2 = op2 * -1;
+                        }
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
+                        this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.b) // byte
+                        {
+                            byte writeMe  =Computer.outerRam.readByte((int)addr);
+                            Computer.regSet(this.rd, Convert.ToUInt32(writeMe));
+
+
+                        }
+                        else // word 
+                        {
+                            uint writer = Computer.outerRam.readWord((int)addr);
+                            Computer.regSet(this.rd, writer);
+
+                        }
+                        if (this.p && this.w)
+                        {
+                            Computer.regSet(rn, addr);
+                        }
+
+                    }
+                    else
+                    {
+
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
+                        if (this.b) // byte
+                        {
+                            byte writeMe  =Computer.outerRam.readByte((int)addr);
+                            Computer.regSet(this.rd, Convert.ToUInt32(writeMe));
+
+
+                        }
+                        else // word 
+                        {
+                            uint writer = Computer.outerRam.readWord((int)addr);
+                            Computer.regSet(this.rd, writer);
+
+                        }
+
+                    }
+
+
+
+                }
+                else // STORE
+                {
+
+
+                    if (this.p)
+                    {
+                        byte[] midstep = new byte[4];
+                        this.Reverse(ref this.rShift);
+                        this.rShift.CopyTo(midstep, 0);
+
+
+                        int op2 = BitConverter.ToInt32(midstep, 0);
+                        if (!this.u)
+                        {
+                            op2 = op2 * -1;
+                        }
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.b) // byte
+                        {
+                            byte[] writeMe = Computer.regRead(rd);
+                            Computer.outerRam.writeByte((int)addr, writeMe[0]);
+
+
+                        }
+                        else // word 
+                        {
+                            byte[] writeme = Computer.regRead(rd);
+                            Computer.outerRam.writeWord((int)addr, BitConverter.ToUInt32(writeme, 0));
+
+
+                        }
+                        if (this.p && this.w)
+                        {
+                            Computer.regSet(rn, addr);
+                        }
+
+                    }
+                    else
+                    {
+
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        if (this.b) // byte
+                        {
+                            byte[] writeMe = Computer.regRead(rd);
+                            Computer.outerRam.writeByte((int)addr, writeMe[3]);
+
+
+                        }
+                        else // word 
+                        {
+                            
+                            byte[] writeme = Computer.regRead(rd);
+                            BitArray pie = new BitArray(writeme);
+                            this.Reverse(ref pie);
+                            pie.CopyTo(writeme, 0);
+                            uint superPie = BitConverter.ToUInt32(writeme, 0);
+                            Computer.outerRam.writeWord((int)addr, superPie);
+
+
+                        }
+
+                    }
+
+                }
+
+
+            }
+            else // REG HALF OF LOAD AND STORE
+            {
+
+
+
+
+
+                uint save = this.rn;
+                this.rn = this.rm;
+                this.shifter();
+                this.rn = save;
+                if (this.l) // LOAD
+                {
+                    if (this.p)
+                    {
+                        
+                        int op2 = Convert.ToInt32(base.finalVal);
+                            if (!this.u)
+                            {
+                                op2 = op2 * -1;
+                            }
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.b) // byte
+                        {
+                            byte writeMe = Computer.outerRam.readByte((int)addr);
+                            Computer.regSet(this.rd, Convert.ToUInt32(writeMe));
+
+
+                        }
+                        else // word 
+                        {
+                            uint writer = Computer.outerRam.readWord((int)addr);
+                            Computer.regSet(this.rd, writer);
+
+                        }
+                        if (this.p && this.w)
+                        {
+                            Computer.regSet(rn, addr);
+                        }
+
+                    }
+                    else
+                    {
+
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        if (this.b) // byte
+                        {
+                            byte writeMe = Computer.outerRam.readByte((int)addr);
+                            Computer.regSet(this.rd, Convert.ToUInt32(writeMe));
+
+
+                        }
+                        else // word 
+                        {
+                            uint writer = Computer.outerRam.readWord((int)addr);
+                            Computer.regSet(this.rd, writer);
+
+                        }
+
+                    }
+
+
+
+                }
+                else // STORE
+                {
+
+
+                    if (this.p)
+                    {
+                        int op2 = Convert.ToInt32(base.finalVal);
+                        if (!this.u)
+                        {
+                            op2 = op2 * -1;
+                        }
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.b) // byte
+                        {
+                            byte[] writeMe = Computer.regRead(rd);
+                            BitArray pie =  new BitArray(writeMe);
+                            this.Reverse(ref pie);
+
+                            Computer.outerRam.writeByte((int)addr, writeMe[0]);
+
+
+                        }
+                        else // word 
+                        {
+                            byte[] writeme = Computer.regRead(rd);
+                            BitArray pie = new BitArray(writeme);
+                            
+                            pie.CopyTo(writeme,0);
+
+                            
+                            Computer.outerRam.writeWord((int)addr, BitConverter.ToUInt32(writeme, 0));
+
+
+                        }
+                        if (this.p && this.w)
+                        {
+                            Computer.regSet(rn, addr);
+                        }
+
+                    }
+                    else
+                    {
+
+                        this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        if (this.b) // byte
+                        {
+                            byte[] writeMe = Computer.regRead(rd);
+                            Computer.outerRam.writeByte((int)addr, writeMe[3]);
+
+
+                        }
+                        else // word 
+                        {
+                            byte[] writeme = Computer.regRead(rd);
+                            BitArray pie = new BitArray(writeme);
+                            this.Reverse(ref pie);
+                            pie.CopyTo(writeme,0);
+                            uint superPie = BitConverter.ToUInt32(writeme, 0);
+                            Computer.outerRam.writeWord((int)addr, superPie);
+
+
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+        }
     }
 
     class branching : Instruction
@@ -1299,6 +1676,7 @@ r10 r11 r12 r13 r14
             
 			Computer.log = new StreamWriter("log.txt",true);
             Computer.Trace = new StreamWriter("trace.log", false);
+            Computer.Trace.AutoFlush = true;
             Computer.log.WriteLine("\r\n" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\r\n");
             Computer.log.WriteLine("Loader: initializing per command");
             Computer.Init();
