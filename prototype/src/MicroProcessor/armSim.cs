@@ -48,6 +48,7 @@ namespace armsim
         public static bool exec;
         public static SimGui sim;
         public static bool inT;
+        public static string path;
       
         public static bool stt;
 
@@ -228,8 +229,11 @@ namespace armsim
            {
                outerRam.RAM[x] = 0x00;
            }
+           Computer.readFile(Computer.path);
            byte[] b =BitConverter.GetBytes(outerRam.readWord(0));
            byte[] c = BitConverter.GetBytes(Computer.programCount);
+           byte[] d = BitConverter.GetBytes(0x00007000);
+
            r0.RAM = b;
            r1.RAM = b;
            r2.RAM = b;
@@ -1776,6 +1780,7 @@ r10 r11 r12 r13 r14
 			//ram.printRam ();
 			if (loader == true) {
 				string file = cmdline [y];
+                Computer.path = file;
 				Computer.log.WriteLine ("Loader: reading elf file " + file);
 				ReadElf.ReadELfData (file, ref Computer.outerRam);
                 

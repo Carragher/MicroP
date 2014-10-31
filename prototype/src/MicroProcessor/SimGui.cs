@@ -112,7 +112,7 @@ namespace armsim
                 openFileDialog1.Filter = "ELF|*.exe|All File Types|*.*";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-
+                    Computer.path = Path.GetFullPath(openFileDialog1.FileName);
                     string ext = Path.GetExtension(openFileDialog1.FileName);
                     if (ext == ".exe")
                     {
@@ -188,7 +188,8 @@ namespace armsim
         private void stepBtn_Click(object sender, EventArgs e)
         {
             new Thread(Computer.step).Start();
-            
+            this.runBtn.Enabled = false;
+            this.stepBtn.Enabled = false;
             regGrid.Rows.Clear();
             for (uint x = 0; x < 16; x++)
             {
@@ -196,6 +197,8 @@ namespace armsim
                 string[] row = new string[] { rnum, BitConverter.ToUInt32(Computer.regRead(x), 0).ToString("X8") };
                 regGrid.Rows.Add(row);
             }
+            this.runBtn.Enabled = true;
+            this.stepBtn.Enabled = true;
         
         }
 
@@ -205,12 +208,16 @@ namespace armsim
 
             new Thread(Computer.run).Start();
             regGrid.Rows.Clear();
+            this.runBtn.Enabled = false;
+            this.stepBtn.Enabled = false;
             for (uint x = 0; x < 16; x++)
             {
                 string rnum = "r" + x.ToString();
                 string[] row = new string[] { rnum, BitConverter.ToUInt32(Computer.regRead(x), 0).ToString("X8") };
                 regGrid.Rows.Add(row);
             }
+            this.runBtn.Enabled = true;
+            this.stepBtn.Enabled = true;
         }
         //sets the stop variable that stops the thread of run
         private void stopBtn_Click(object sender, EventArgs e)
@@ -304,6 +311,7 @@ namespace armsim
         private void timer1_Tick(object sender, EventArgs e)
         {
             update();
+            output.Text = Computer.HashSet();
 
         }
     }
