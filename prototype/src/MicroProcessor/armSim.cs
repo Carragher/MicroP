@@ -472,6 +472,31 @@ r10 r11 r12 r13 r14
 
             }
 
+            if (t1 == true && t2 == false) // LOAD STORE MULTIPLES uint dcd, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rn, BitArray btmHalf
+            {
+                bool p = bity[24];
+                bool u = bity[23];
+                bool b = bity[22];
+                bool w = bity[21];
+                bool l = bity[20];
+                BitArray rn = new BitArray(4);
+                BitArray btm = new BitArray(16);
+
+                rn[0] = bity[19];
+                rn[1] = bity[18];
+                rn[2] = bity[17];
+                rn[3] = bity[16];
+
+                for (int x = 15; x >= 0; x--)
+                {
+                    btm[x] = bity[x];
+                }
+                mulData mD = new mulData(dcd, p, u, b, w, l, rn, btm);
+                return mD;
+
+
+            }
+
             if (t1 == true && t2 == true && t3 == true && t4 == true) // testing for swi May God have mercy
             {
                 swi ender = new swi();
@@ -1267,6 +1292,145 @@ r10 r11 r12 r13 r14
             }
 
         }
+    }
+
+
+
+    class mulData : Instruction
+    {
+        public bool p;
+        public bool u;
+        public bool b;
+        public bool w;
+        public bool l;
+        public uint addr;
+        public uint regCount;
+        public BitArray Breg;
+        
+
+
+
+        public mulData(uint dcd, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rn, BitArray btmHalf)
+        {
+            this.p = pi;
+            this.u = ui;
+            this.b = bi;
+            this.w = wi;
+            this.l = li;
+            this.regCount = 0;
+            this.Breg = btmHalf;
+            byte[] midstep2 = new byte[4];
+            this.Reverse(ref rn);
+            rn.CopyTo(midstep2, 0);
+            base.rn = BitConverter.ToUInt32(midstep2, 0);
+
+            for (int x = 0; x < 16; x++)
+            {
+                if (btmHalf[x] == true)
+                {
+                    regCount++;
+                }
+            }
+            
+
+
+        }
+
+        public override void run()
+        {
+            base.run();
+            bool incAfter = false ;
+            bool decBefore = false;
+            uint lp = 4 * regCount;
+            if (this.p)
+            {
+                decBefore = true;
+                //Computer.regSet(13, BitConverter.ToUInt32(Computer.regRead(13), 0) - lp);
+            }
+
+            if (!this.p)
+            {
+                incAfter = true;
+                //Computer.regSet(13, BitConverter.ToUInt32(Computer.regRead(13), 0) + lp);
+            }
+            
+            
+
+            this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+
+            if (this.l)//LOADS 
+            {
+
+                if (decBefore)
+                {
+                    addr = addr;
+                    for (int x = 0; x < 16; x++)
+                    {
+                        if (this.Breg[x])
+                        {
+                            Computer.regSet((uint)x, Computer.outerRam.readWord((int)addr));
+                            addr +=4;
+                        }
+                    }
+                }
+                if (incAfter)
+                {
+                    addr = addr;
+                    for (int x = 0; x < 16; x++)
+                    {
+                        if (this.Breg[x])
+                        {
+                            Computer.regSet((uint)x, Computer.outerRam.readWord((int)addr));
+                            addr +=4;
+                        }
+                    }
+                }
+                
+
+                
+            }
+            else// STORE 
+            {
+
+                if (decBefore)
+                {
+                     addr = addr - (regCount * 4);
+                    for (int x = 0; x < 16; x++)
+                    {
+                        if (this.Breg[x])
+                        {
+
+                            Computer.outerRam.writeWord((int)addr,BitConverter.ToUInt32(Computer.regRead((uint)x),0));
+                            addr +=4;
+                        }
+                    }
+                }
+                if (incAfter)
+                {
+                    addr = addr + (regCount * 4);
+                    for (int x = 0; x < 16; x++)
+                    {
+                        if (this.Breg[x])
+                        {
+                            Computer.outerRam.writeWord((int)addr, BitConverter.ToUInt32(Computer.regRead((uint)x), 0));
+                            addr += 4;
+                        }
+                    }
+                }
+
+
+            }
+            if (this.w && this.p)
+            {
+                Computer.regSet(this.rn,addr - lp );
+            }
+            if (this.w && !this.p)
+            {
+                Computer.regSet(this.rn, addr );
+            }
+         
+        }
+
     }
 
     class branching : Instruction
