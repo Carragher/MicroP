@@ -1,0 +1,2 @@
+FC ctest.log trace.log | FIND "FC: no dif" > nul 
+   IF ERRORLEVEL 1 goto :s_files_are_different
