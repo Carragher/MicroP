@@ -49,6 +49,10 @@ namespace armsim
         public static SimGui sim;
         public static bool inT;
         public static string path;
+        public static bool N;
+        public static bool Z;
+        public static bool C;
+        public static bool V;
       
         public static bool stt;
 
@@ -476,7 +480,7 @@ r10 r11 r12 r13 r14
 
             }
 
-            if (t1 == true && t2 == false) // LOAD STORE MULTIPLES uint dcd, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rn, BitArray btmHalf
+            if (t1 == true && t2 == false && t3 == false ) // LOAD STORE MULTIPLES uint dcd, bool pi, bool ui, bool bi, bool wi, bool li, BitArray rn, BitArray btmHalf
             {
                 bool p = bity[24];
                 bool u = bity[23];
@@ -497,6 +501,15 @@ r10 r11 r12 r13 r14
                 }
                 mulData mD = new mulData(dcd, p, u, b, w, l, rn, btm);
                 return mD;
+
+
+            }
+
+            if (t1 == true && t2 == false && t3 == false) //  branching
+            {
+
+                //t4 is L for b and bl
+
 
 
             }
@@ -779,9 +792,70 @@ r10 r11 r12 r13 r14
             if(!base.isIm){
               shifter();
             }
-            
-            
 
+
+            if (base.opCode == 0xA)//cmp
+            {
+                
+                
+                byte[] op1 = Computer.regRead(r1);
+                uint num1 = BitConverter.ToUInt32(op1, 0);
+                uint num2 = base.finalVal;
+                int answer = (int)(num1 - num2);
+                byte[] Conversion = new byte[4];
+                Conversion = BitConverter.GetBytes(answer);
+                BitArray TestBits = new BitArray(Conversion);
+                bool N = TestBits[31];
+                Computer.N = N;// get n flag
+
+                if (answer == 0)
+                {
+                    Computer.Z = true;
+                }
+                else
+                {
+                    Computer.Z = false;
+                } //#mr COCO
+
+                //c flag unsigned thingie
+
+                if (num2 > num1)
+                {
+
+                    Computer.C = false;
+
+                }
+                else
+                {
+
+                    Computer.C = true;
+
+                }
+
+
+
+                // v flag signed thingie ma jig
+                answer = (int)num1 - (int)num2; // black magic flip sign if it dont work
+                if (((int)num1 > -1 && (int)num2 < 0 && answer < 0)|| ((int)num1 < 0 && (int)num2 >-1 && answer > -1)) 
+                {
+                    Computer.V = true;
+                } else {
+                    Computer.V = false;
+                }
+
+
+
+
+
+                    
+
+
+                    
+
+
+              
+
+            }
 
 
             if (base.opCode == 0xD) // mov
@@ -1022,9 +1096,9 @@ r10 r11 r12 r13 r14
         public override void run()
         {
             base.run();
-            
-            
 
+
+            
             if (!base.isIm)
             {
                 // p=0 addr = rn
@@ -1035,6 +1109,7 @@ r10 r11 r12 r13 r14
 
                 if (this.l) // LOAD
                 {
+                    
                     if (this.p)
                     {
                         byte[] midstep = new byte[4]; // ya done messed up now
@@ -1047,8 +1122,13 @@ r10 r11 r12 r13 r14
                         {
                             op2 = op2 * -1;
                         }
+                        
                         this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
                         this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.rn == 15 || this.rd == 15)
+                        {
+                            this.addr += 8;
+                        }
                         if (this.b) // byte
                         {
                             byte writeMe  =Computer.outerRam.readByte((int)addr);
@@ -1072,6 +1152,10 @@ r10 r11 r12 r13 r14
                     {
 
                         this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn),0);
+                        if (this.rn == 15 || this.rd == 15)
+                        {
+                            this.addr += 8;
+                        }
                         if (this.b) // byte
                         {
                             byte writeMe  =Computer.outerRam.readByte((int)addr);
@@ -1109,6 +1193,10 @@ r10 r11 r12 r13 r14
                         }
                         this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
                         this.addr = Convert.ToUInt32(addr + op2);
+                        if (this.rn == 15 || this.rd == 15)
+                        {
+                            this.addr += 8;
+                        }
                         if (this.b) // byte
                         {
                             byte[] writeMe = Computer.regRead(rd);
@@ -1133,6 +1221,10 @@ r10 r11 r12 r13 r14
                     {
 
                         this.addr = BitConverter.ToUInt32(Computer.regRead(base.rn), 0);
+                        if (this.rn == 15 || this.rd == 15)
+                        {
+                            this.addr += 8;
+                        }
                         if (this.b) // byte
                         {
                             byte[] writeMe = Computer.regRead(rd);
@@ -1440,6 +1532,13 @@ r10 r11 r12 r13 r14
     class branching : Instruction
     {
 
+
+        public branching()
+        {
+
+        }
+
+
     }
     
 
@@ -1554,13 +1653,20 @@ r10 r11 r12 r13 r14
 	class Memory
 	{
 		public byte[] RAM;
+        public uint flags;
 
         public Memory() { ;}
 
 		//instructer that takes a uInt variable and intializes the size of ram with it.
 		public Memory(uint size){
 			RAM = new byte[size];
+            flags = 0;
 		}
+
+        public uint returnFlags()
+        {
+            return this.flags;
+        }
 
 		//the method takes in an int address then reads in a full 32bit word from RAM and outputs an unsigned int of the same type.
 	 	public uint readWord(int address) {

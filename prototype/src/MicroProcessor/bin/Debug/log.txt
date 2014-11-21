@@ -6359,3 +6359,484 @@ Loader: reading elf file btest.exe
 Loader: Entry point: 1000
 Loader: Number of program header entries: 1
 Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+
+2014-11-18 09:49:13
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+
+2014-11-20 20:59:41
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+
+2014-11-20 21:03:43
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:11:55
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:13:18
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:13:59
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:14:34
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:17:10
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:17:46
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:18:58
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 6C377D0CEF98BD8B36B655F967C227E8
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 052F81D301E5233732796981278D34EF
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 9DF3B0A042A2436EB4CBFAF0AB30B0B5
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 520BC81C8933C77071D6393816822ECC
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+
+2014-11-20 21:21:40
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file btest.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3818921723
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+2 3818924549
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+3 3818928643
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+4 3818930184
+Loader: HASH IS: 8E31D83D2D03D5C6CD7A2A4EBDD94993
+Prototype: Running in a loop
+5 3850506240
+Loader: HASH IS: 628C0B4566E962AF73588976F9830BD0
+Prototype: Running in a loop
+6 3842117636
+Loader: HASH IS: 525CC311372AD6E0584AA2829D1FE169
+Prototype: Running in a loop
+7 3875672068
+Loader: HASH IS: 6C377D0CEF98BD8B36B655F967C227E8
+Prototype: Running in a loop
+8 3884060676
+Loader: HASH IS: 052F81D301E5233732796981278D34EF
+Prototype: Running in a loop
+9 3884060868
+Loader: HASH IS: 9DF3B0A042A2436EB4CBFAF0AB30B0B5
+Prototype: Running in a loop
+10 3884060932
+Loader: HASH IS: 520BC81C8933C77071D6393816822ECC
+Prototype: Running in a loop
+11 3854700556
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+12 3851571200
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+13 3843186692
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+14 3876745220
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+15 3885137924
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+16 3885142212
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+17 3885146372
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+18 3855790092
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+19 3818917889
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+20 3818921986
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+21 3818930180
+Loader: HASH IS: 80627014170E782536A13ACD9AD22130
+Prototype: Running in a loop
+22 3912040470
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+23 3818917898
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+24 3818926110
+Loader: HASH IS: 5CEB58019272178C4B339C588045DA7A
+Prototype: Running in a loop
+25 3912040458
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+26 3818917888
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+27 3818926080
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+28 3904700426
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+29 3902603286
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+30 4009754641
+Loader: HASH IS: 163789E37910E054EBC12EC87D6F0D65
+Prototype: Running in a loop
+
+2014-11-20 21:22:10
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+
+2014-11-20 21:24:19
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file ldmstm.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3818917889
+Loader: HASH IS: E98621F3F473BB227E2898E7C906F805
+Prototype: Running in a loop
+2 3818921986
+Loader: HASH IS: E98621F3F473BB227E2898E7C906F805
+Prototype: Running in a loop
+3 3818930180
+Loader: HASH IS: E98621F3F473BB227E2898E7C906F805
+Prototype: Running in a loop
+4 3912040470
+Loader: HASH IS: FE5202FC751D6C18BCE98E53F4A41A6B
+Prototype: Running in a loop
+5 3818917898
+Loader: HASH IS: FE5202FC751D6C18BCE98E53F4A41A6B
+Prototype: Running in a loop
+6 3818926110
+Loader: HASH IS: FE5202FC751D6C18BCE98E53F4A41A6B
+Prototype: Running in a loop
+7 3912040458
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+8 3818917888
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+9 3818926080
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+10 3904700426
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+11 3904700438
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+12 4009754641
+Loader: HASH IS: F2DF243EEBB00987EA451FFD871D334D
+Prototype: Running in a loop
+
+2014-11-20 21:38:01
+
+Loader: initializing per command
+Prototype: Initializing the Computer variables
+Prototype: Initializing the registers
+loader: creating ram of size 32768
+Loader: reading elf file pcaddr.exe
+Loader: Entry point: 1000
+Loader: Number of program header entries: 1
+Prototype: Running in a loop
+1 3785359375
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+2 3852402688
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+3 3844014088
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
+4 4009754641
+Loader: HASH IS: F492FFE9E10BFEDFD932A47DB814EA7B
+Prototype: Running in a loop
