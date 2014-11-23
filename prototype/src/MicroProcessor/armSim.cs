@@ -54,8 +54,12 @@ namespace armsim
         public static bool C;
         public static bool V;
         public static uint programCounterODoom;
-      
+        public static uint branchCount;
+        public static bool bl;
+        public static bool BX;
         public static bool stt;
+        public static Queue<char> inQ;
+        public static Queue<char> outQ;
 
         public static void setStop()
         {
@@ -213,6 +217,10 @@ namespace armsim
             stepCounter = 0;
             programCount = 0;
             exec = false;
+            inQ = new Queue<char>();
+            outQ = new Queue<char>();
+
+            bl = true;
            
             stt = false;
             
@@ -350,7 +358,7 @@ namespace armsim
             Computer.inT = true;
             while (!stop)
             {
-                if (Computer.stepCounter == 10)
+                if (Computer.stepCounter == 77)
                 {
                     bool omega = true;
                 }
@@ -366,9 +374,10 @@ namespace armsim
                 }
                 Instruction dcded = processor.decode(fetched);
                 
-                processor.exectute(dcded);
+                bool Failure = processor.exectute(dcded);
+                
                 uint localCount = 0;
-                uint logicBREAKER = 0;
+                int logicBREAKER = 0;
                 if (programCounterODoom == 0)
                 {
                     localCount = Computer.r15.readWord(0);
@@ -377,7 +386,14 @@ namespace armsim
                 else
                 {
                     localCount = Computer.programCounterODoom ;
-                    logicBREAKER = 4;
+
+                    logicBREAKER = 0;
+
+                    if (Computer.bl == false)
+                    {
+                        
+                        logicBREAKER = 0;
+                    }
                 }
                 r15.writeWord(0, Convert.ToUInt32(localCount));
                 if (traceTest)
@@ -387,9 +403,16 @@ namespace armsim
                 Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.Flush();
                 }
+              
                 localCount += 4;
-                r15.writeWord(0, Convert.ToUInt32(localCount + logicBREAKER));
+                r15.writeWord(0, Convert.ToUInt32(localCount));
+                if (programCounterODoom != 0) // if last instruct was branch command  set program to non hardcode
+                {
+                    r15.writeWord(0, Convert.ToUInt32(branchCount +4));
+                }
                 Computer.programCounterODoom = 0;
+                
+                Computer.bl = true;
 
                 
             }
@@ -419,26 +442,48 @@ r10 r11 r12 r13 r14
         public static void step()
         {
 
+            if (Computer.stepCounter == 10)
+            {
+                bool omega = true;
+            }
+
             Computer.stepCounter += 1;
-            Computer.log.WriteLine("Prototype: Running a cycle");
+            Computer.log.WriteLine("Prototype: Running in a loop");
             int addr = Convert.ToInt32(r15.readWord(0));
             uint fetched = processor.fetch(r15.readWord(0));
-            addr += 4;
-            r15.writeWord(0, Convert.ToUInt32(addr));
-            if (fetched != 0)
-            { 
-                Instruction dcded = processor.decode(fetched);
-                processor.exectute(dcded);
-                
+
+            
+            Instruction dcded = processor.decode(fetched);
+
+            processor.exectute(dcded);
+            uint localCount = 0;
+            uint logicBREAKER = 0;
+            if (programCounterODoom == 0)
+            {
+                localCount = Computer.r15.readWord(0);
+                logicBREAKER = 0;
             }
+            else
+            {
+                localCount = Computer.programCounterODoom;
+
+
+                logicBREAKER = 0;
+            }
+            r15.writeWord(0, Convert.ToUInt32(localCount));
             if (traceTest)
             {
-                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + r15.readWord(0).ToString("x8").ToUpper() + " " + "[sys]" + " " + Computer.flagToString() + " 0=" + r0.readWord(0).ToString("x8").ToUpper() + " 1=" + r1.readWord(0).ToString("x8").ToUpper() + " 2=" + r2.readWord(0).ToString("x8").ToUpper() + " 3=" + r3.readWord(0).ToString("x8").ToUpper());
+                Computer.Trace.WriteLine(Computer.stepCounter.ToString().PadLeft(6, '0') + " " + Computer.r15.readWord(0).ToString("x8").ToUpper() + " " + "[sys]" + " " + Computer.flagToString() + " 0=" + r0.readWord(0).ToString("x8").ToUpper() + " 1=" + r1.readWord(0).ToString("x8").ToUpper() + " 2=" + r2.readWord(0).ToString("x8").ToUpper() + " 3=" + r3.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.WriteLine("       " + " 4=" + r4.readWord(0).ToString("x8").ToUpper() + " 5=" + r5.readWord(0).ToString("x8").ToUpper() + " 6=" + r6.readWord(0).ToString("x8").ToUpper() + " 7=" + r7.readWord(0).ToString("x8").ToUpper() + " 8=" + r8.readWord(0).ToString("x8").ToUpper() + " 9=" + r9.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.WriteLine("      " + " 10=" + r10.readWord(0).ToString("x8").ToUpper() + " 11=" + r11.readWord(0).ToString("x8").ToUpper() + " 12=" + r12.readWord(0).ToString("x8").ToUpper() + " 13=" + r13.readWord(0).ToString("x8").ToUpper() + " 14=" + r14.readWord(0).ToString("x8").ToUpper());
                 Computer.Trace.Flush();
             }
+            localCount += 4;
+            r15.writeWord(0, Convert.ToUInt32(localCount + logicBREAKER));
             
+
+            Computer.programCounterODoom = 0;
+            Computer.inT = false;
             stop = false;
           
 
@@ -471,7 +516,8 @@ r10 r11 r12 r13 r14
                     if (Z) { return true; }
                     break;
                 case 0x1:
-                    if (!Z) { return true; }
+                    if (!Z) {
+                        return true; }
                     break;
                 case 0x2:
                     if (C) { return true; }
@@ -532,6 +578,7 @@ r10 r11 r12 r13 r14
         //decodes an instruction
         public Instruction decode(uint dcd)
         {
+            Computer.BX = false;
             Computer.log.WriteLine(Computer.stepCounter + " " + dcd);
             Instruction ist = new Instruction();
             //test bits 27 and 26;
@@ -544,6 +591,9 @@ r10 r11 r12 r13 r14
             mixup[1] = bity[30];
             mixup[0] = bity[31];
             byte[] converter = new byte[4];
+            ist.Reverse(ref mixup);
+            
+            
             mixup.CopyTo(converter, 0);
             int havntSlept = BitConverter.ToInt32(converter, 0);
 
@@ -552,7 +602,7 @@ r10 r11 r12 r13 r14
             if (!testMe)
             {
                return ist;
-            }
+            } 
             bool t1 = bity[27];
             bool t2 = bity[26];
             bool t3 = bity[25];
@@ -571,16 +621,17 @@ r10 r11 r12 r13 r14
                 BitArray specialCase1 = new BitArray(8);
                 BitArray specialCase2 = new BitArray(4);
 
-                for (int x = 7; x >= 0; x--)
+                for (int x = 27, y = 7; x >= 20; x--, y--)
                 {
-                    specialCase1[x] = bity[x];
+                    specialCase1[y] = bity[x];
                 }
-                for (int x = 3; x >= 0; x--)
+                for (int x = 3, y = 7; x >= 0; x-- ,y--)
                 {
-                    specialCase2[x] = bity[x];
+                    specialCase2[x] = bity[y];
                 }
                 byte[] sp1 = new byte[4];
                 byte[] sp2 = new byte[4];
+               
                 specialCase1.CopyTo(sp1, 0);
                 specialCase2.CopyTo(sp2, 0);
                 uint pie1 = BitConverter.ToUInt32(sp1, 0);
@@ -590,6 +641,7 @@ r10 r11 r12 r13 r14
                 if (pie1 == 18 && pie2 == 1)/// magic BX case that is of evil things
                 {
                     ///r15 now = memory.readword(rm) + (pc offset)
+                    Computer.BX = true;
                     
                     sBranch bx = new sBranch(bity);
                     return bx;
@@ -734,7 +786,9 @@ r10 r11 r12 r13 r14
         {
             if (inst is swi)
             {
+                Computer.stop = true;
                 return false;
+
             }
             inst.run();
             if (!Computer.exec)
@@ -772,7 +826,19 @@ r10 r11 r12 r13 r14
 
         public Instruction() { ;}
 
-        public virtual void run() { }
+        public virtual void run()
+        {
+            if (!Computer.BX)
+            {
+                if (rd == 15 || rm == 15 || rn == 15)
+                {
+                    bool b = true;
+                    uint addr = BitConverter.ToUInt32(Computer.regRead(15), 0);
+                    addr = addr + 8;
+                    Computer.regSet(15, addr);
+                }
+            }
+        }
 
         public void shifter()
         {// non little endian
@@ -890,8 +956,26 @@ r10 r11 r12 r13 r14
         public override void run()
         {
             base.run();
+
             Computer.programCounterODoom = Computer.r15.readWord(0);
-            Computer.r15.writeWord(0, Computer.outerRam.readWord(Convert.ToInt32(bity[0 - 3])));
+
+            byte[] blah = new byte[4];
+            BitArray newb = new BitArray(4);
+            newb[0] = bity[0];
+            newb[1] = bity[1];
+            newb[2] = bity[2];
+            newb[3] = bity[3];
+
+            this.Reverse(ref bity);
+            newb.CopyTo(blah, 0);
+            int oops = BitConverter.ToInt32(blah, 0);
+
+            
+            byte[] converter = Computer.regRead(BitConverter.ToUInt32(blah, 0));
+            uint pie = BitConverter.ToUInt32(converter, 0);
+            Computer.branchCount = BitConverter.ToUInt32(converter, 0) - 4;
+
+            Computer.r15.writeWord(0, Computer.outerRam.readWord(BitConverter.ToInt32(blah,0)));
             
         }
     }
@@ -996,18 +1080,13 @@ r10 r11 r12 r13 r14
 
         public override void run()
         {
+
             base.run();
 
             uint regnum = base.rd;
             uint r1 = base.rm;
             uint r2 = base.rn;
-            if (regnum == 15 || r1 == 15 || r2 == 15)
-            {
-                bool b = true;
-                uint addr =BitConverter.ToUInt32(Computer.regRead(15),0);
-                addr = addr + 8;
-                Computer.regSet(15, addr);
-            }
+            
             
             if(!base.isIm){
               shifter();
@@ -1097,7 +1176,7 @@ r10 r11 r12 r13 r14
                 {
                     
                     
-                    byte[] op1 = Computer.regRead(r1);
+                    byte[] op1 = Computer.regRead(r2);
                     uint answer = BitConverter.ToUInt32(op1, 0) + base.finalVal;
                     Computer.regSet(regnum, answer);
 
@@ -1781,19 +1860,20 @@ r10 r11 r12 r13 r14
 
         public override void run()
         {
-            base.run();
+            
             
             uint baseaddr = BitConverter.ToUInt32(Computer.regRead(15),0);
             uint addrB = 0;
-            Computer.programCounterODoom = Computer.r15.readWord(0) ;
+            Computer.programCounterODoom = Computer.r15.readWord(0);
             if (b)
             {
-                Computer.regSet(14, baseaddr-4);
+                Computer.regSet(14, baseaddr+4);
+                Computer.bl = false;
             }
-            addrB = (uint)(baseaddr + this.address);
-            addrB -= 4;
-            Computer.r15.writeWord(0, addrB);
-            //Computer.regSet(15, addrB);
+
+            addrB = Computer.programCounterODoom + this.address + 4;
+            Computer.branchCount = addrB;
+          
             
 
         }
@@ -1968,7 +2048,16 @@ r10 r11 r12 r13 r14
 		}
 		// this is the single byte version of readword.
 		public byte readByte(int address) {
-			return RAM[address];
+            if (address == 0x00100000)
+            {
+                //read from que ya dummy
+            }
+            else
+            {
+                return RAM[address];
+            }
+
+			
 		}
 
 		//this is the single byte version of write word
